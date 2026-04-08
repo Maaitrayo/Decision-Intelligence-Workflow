@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from api.routes.query import router as query_router
 from api.routes.run import router as run_router
 from pipeline.db_init import init_db
 
@@ -16,6 +17,7 @@ async def on_startup() -> None:
 
 
 app.include_router(run_router)
+app.include_router(query_router)
 
 
 @app.get("/api/health")
