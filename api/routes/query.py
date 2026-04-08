@@ -1,5 +1,11 @@
+from google import genai
 from pydantic import BaseModel, Field
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+
+from pipeline.config import get_settings
+from pipeline.db import get_db_session
+from pipeline.repository import RunRepository, run_record_to_model
 
 
 router = APIRouter(prefix="/api/query", tags=["query"])
@@ -18,9 +24,54 @@ class QueryResponse(BaseModel):
 
 
 @router.post("")
-async def query_run(request: QueryRequest) -> QueryResponse:
+async def query_run(
+    request: QueryRequest,
+    db: Session = Depends(get_db_session),
+) -> QueryResponse:
+    repository = RunRepository(db)
+    run = repository.get_run(request.run_id)
+    if run is None:
+        raise HTTPException(status_code=404, detail="Run not found")
+
+    if request.session_id:
+        session = repository.get_chat_session(request.session_id)
+        if session is None:
+            raise HTTPException(status_code=404, detail="Chat session not found")
+    else:
+        session = repository.create_chat_session(request.run_id, title=request.question[:80])
+
+    repository.add_chat_message(session.id, "user", request.question)
+
+    settings = get_settings()
+    if not settings.gemini_api_key:
+        raise ValueError("GEMINI_API_KEY is required to run follow-up queries.")
+
+    run_result = run_record_to_model(run)
+    chat_history = repository.get_chat_session(session.id)
+    history_text = ""
+    if chat_history is not None and chat_history.messages:
+        history_text = "\n".join(
+            f"{message.role}: {message.content}"
+            for message in chat_history.messages[-10:]
+        )
+
+    client = genai.Client(api_key=settings.gemini_api_key)
+    response = await client.aio.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=(
+            "You are answering a follow-up question about a saved decision intelligence run. "
+            "Use only the provided run context and prior chat history. "
+            "Do not claim you reran the pipeline.\n\n"
+            f"Run context:\n{run_result.model_dump_json(indent=2)}\n\n"
+            f"Chat history:\n{history_text}\n\n"
+            f"User question:\n{request.question}"
+        ),
+    )
+    answer = response.text or "No answer generated."
+    repository.add_chat_message(session.id, "assistant", answer)
+
     return QueryResponse(
         run_id=request.run_id,
-        session_id=request.session_id,
-        answer="Query handling is not implemented yet.",
+        session_id=session.id,
+        answer=answer,
     )
