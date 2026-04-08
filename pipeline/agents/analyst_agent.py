@@ -5,36 +5,32 @@ from pipeline.models import AgentOutput, AgentSignal, ScoredItem
 class AnalystAgent(BaseAgent):
     async def run(self, items: list[ScoredItem]) -> AgentOutput:
         candidate_items = [item for item in items if item.bucket in {"high", "medium"} and item.discard_reason is None]
-        top_items = candidate_items[:5]
+        payload = await self.generate_json(
+            system_prompt=(
+                "You are the Analyst agent in a decision intelligence workflow. "
+                "Identify the most important signals from the provided scored items. "
+                "Return strict JSON with keys: signals, weak_claims, reasoning. "
+                "Each signal must contain title, summary, source, confidence."
+            ),
+            user_prompt=(
+                "Analyze these scored items and identify 3 to 5 actionable signals.\n\n"
+                f"{self.build_context(candidate_items)}"
+            ),
+        )
 
         signals = [
             AgentSignal(
-                title=item.item.title,
-                summary=self._build_signal_summary(item),
-                source=item.item.source,
-                confidence=self._confidence_for_bucket(item.bucket),
+                title=signal.get("title", ""),
+                summary=signal.get("summary", ""),
+                source=signal.get("source", ""),
+                confidence=signal.get("confidence"),
             )
-            for item in top_items
+            for signal in payload.get("signals", [])
+            if signal.get("title")
         ]
-
-        weak_claims = [item.item.title for item in candidate_items if item.bucket == "medium"]
 
         return AgentOutput(
             signals=signals,
-            weak_claims=weak_claims,
-            reasoning=f"Selected {len(signals)} signals from {len(candidate_items)} candidate items.",
+            weak_claims=[claim for claim in payload.get("weak_claims", []) if isinstance(claim, str)],
+            reasoning=str(payload.get("reasoning", "")),
         )
-
-    @staticmethod
-    def _build_signal_summary(item: ScoredItem) -> str:
-        if item.item.summary:
-            return item.item.summary
-        return f"{item.item.title} surfaced with score {item.signal_score} from {item.item.source}."
-
-    @staticmethod
-    def _confidence_for_bucket(bucket: str) -> str:
-        if bucket == "high":
-            return "high"
-        if bucket == "medium":
-            return "medium"
-        return "low"
