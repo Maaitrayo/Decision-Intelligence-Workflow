@@ -1,6 +1,8 @@
 from sqlalchemy.orm import Session, selectinload
 
 from pipeline.db_models import (
+    ChatMessageRecord,
+    ChatSessionRecord,
     IgnoredSignalRecord,
     KeySignalRecord,
     RunRecord,
@@ -93,6 +95,7 @@ class RunRepository:
         return (
             self.db.query(RunRecord)
             .options(
+                selectinload(RunRecord.chat_sessions).selectinload(ChatSessionRecord.messages),
                 selectinload(RunRecord.key_signals),
                 selectinload(RunRecord.ignored_signals),
                 selectinload(RunRecord.uncertainties),
@@ -101,6 +104,28 @@ class RunRepository:
             .filter(RunRecord.id == run_id)
             .one_or_none()
         )
+
+    def create_chat_session(self, run_id: str, title: str = "") -> ChatSessionRecord:
+        session = ChatSessionRecord(run_id=run_id, title=title)
+        self.db.add(session)
+        self.db.commit()
+        self.db.refresh(session)
+        return session
+
+    def get_chat_session(self, session_id: str) -> ChatSessionRecord | None:
+        return (
+            self.db.query(ChatSessionRecord)
+            .options(selectinload(ChatSessionRecord.messages))
+            .filter(ChatSessionRecord.id == session_id)
+            .one_or_none()
+        )
+
+    def add_chat_message(self, session_id: str, role: str, content: str) -> ChatMessageRecord:
+        message = ChatMessageRecord(session_id=session_id, role=role, content=content)
+        self.db.add(message)
+        self.db.commit()
+        self.db.refresh(message)
+        return message
 
 
 def run_record_to_summary(record: RunRecord) -> dict[str, str]:
