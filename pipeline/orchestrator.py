@@ -20,8 +20,12 @@ class PipelineOrchestrator:
     async def run(self, eval_mode: bool = False) -> RunResult:
         trace: list[TraceEntry] = []
 
+        self._log("Starting pipeline run")
+
         ingestion_started = perf_counter()
+        self._log("Stage: ingestion started")
         raw_items = await self.ingestion_service.fetch_all()
+        self._log(f"Stage: ingestion completed | raw_items={len(raw_items)}")
         trace.append(
             self._build_trace_entry(
                 stage="ingestion",
@@ -33,7 +37,9 @@ class PipelineOrchestrator:
         )
 
         scoring_started = perf_counter()
+        self._log("Stage: scoring started")
         scored_items = self.scoring_service.score(raw_items)
+        self._log(f"Stage: scoring completed | scored_items={len(scored_items)}")
         trace.append(
             self._build_trace_entry(
                 stage="scoring",
@@ -45,9 +51,13 @@ class PipelineOrchestrator:
         )
 
         analyst_started = perf_counter()
+        self._log("Stage: analyst started")
         analyst_output = await self.analyst_agent.run(scored_items)
         analyst_duration_ms = self._duration_ms(analyst_started)
         analyst_tokens = self.analyst_agent.last_tokens_used
+        self._log(
+            f"Stage: analyst completed | signals={len(analyst_output.signals)} | tokens={analyst_tokens}"
+        )
         trace.append(
             self._build_trace_entry(
                 stage="analyst",
@@ -61,9 +71,17 @@ class PipelineOrchestrator:
         )
 
         critic_started = perf_counter()
+        self._log("Stage: critic started")
         critic_output = await self.critic_agent.run(analyst_output, scored_items)
         critic_duration_ms = self._duration_ms(critic_started)
         critic_tokens = self.critic_agent.last_tokens_used
+        self._log(
+            "Stage: critic completed | "
+            f"endorsements={len(critic_output.endorsements)} | "
+            f"contested={len(critic_output.contested_signals)} | "
+            f"contradictions={len(critic_output.contradictions)} | "
+            f"tokens={critic_tokens}"
+        )
         trace.append(
             self._build_trace_entry(
                 stage="critic",
@@ -81,7 +99,9 @@ class PipelineOrchestrator:
         )
 
         synthesis_started = perf_counter()
+        self._log("Stage: synthesis started")
         result = self.synthesiser.merge(analyst_output, critic_output, scored_items)
+        self._log(f"Stage: synthesis completed | key_signals={len(result.key_signals)}")
         trace.append(
             self._build_trace_entry(
                 stage="synthesis",
@@ -102,6 +122,9 @@ class PipelineOrchestrator:
             critic_tokens=critic_tokens,
             query_tokens=0,
             total_tokens=total_tokens,
+        )
+        self._log(
+            f"Pipeline completed | total_tokens={total_tokens} | trace_entries={len(trace)} | run_id={result.run_id}"
         )
         return result
 
@@ -129,3 +152,7 @@ class PipelineOrchestrator:
             duration_ms=duration_ms,
             timestamp=datetime.now(timezone.utc),
         )
+
+    @staticmethod
+    def _log(message: str) -> None:
+        print(f"[pipeline] {message}")
