@@ -1,10 +1,10 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 import json
 
 from google import genai
 
 from pipeline.config import get_settings
-from pipeline.models import AgentOutput, ScoredItem
+from pipeline.models import ScoredItem
 
 
 class BaseAgent(ABC):
@@ -15,10 +15,6 @@ class BaseAgent(ABC):
 
         self.client = genai.Client(api_key=settings.gemini_api_key)
         self.model = "gemini-2.5-flash"
-
-    @abstractmethod
-    async def run(self, items: list[ScoredItem]) -> AgentOutput:
-        """Execute the agent against scored items."""
 
     @staticmethod
     def build_context(items: list[ScoredItem]) -> str:
