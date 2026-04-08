@@ -3,8 +3,10 @@ from time import perf_counter
 
 from pipeline.agents.analyst_agent import AnalystAgent
 from pipeline.agents.critic_agent import CriticAgent
+from evaluation.compare import EvaluationComparer
 from pipeline.ingestion.service import IngestionService
 from pipeline.models import RunResult, TokenUsage, TraceEntry
+from pipeline.progress import progress_tracker
 from pipeline.scoring.service import ScoringService
 from pipeline.synthesis.synthesiser import Synthesiser
 
@@ -16,13 +18,16 @@ class PipelineOrchestrator:
         self.analyst_agent = AnalystAgent()
         self.critic_agent = CriticAgent()
         self.synthesiser = Synthesiser()
+        self.evaluation_comparer = EvaluationComparer()
 
     async def run(self, eval_mode: bool = False) -> RunResult:
         trace: list[TraceEntry] = []
 
+        progress_tracker.set_state("starting", "Starting pipeline run", True)
         self._log("Starting pipeline run")
 
         ingestion_started = perf_counter()
+        progress_tracker.set_state("ingestion", "Collecting source data", True)
         self._log("Stage: ingestion started")
         raw_items = await self.ingestion_service.fetch_all()
         self._log(f"Stage: ingestion completed | raw_items={len(raw_items)}")
@@ -37,6 +42,7 @@ class PipelineOrchestrator:
         )
 
         scoring_started = perf_counter()
+        progress_tracker.set_state("scoring", "Ranking and filtering signals", True)
         self._log("Stage: scoring started")
         scored_items = self.scoring_service.score(raw_items)
         self._log(f"Stage: scoring completed | scored_items={len(scored_items)}")
@@ -51,6 +57,7 @@ class PipelineOrchestrator:
         )
 
         analyst_started = perf_counter()
+        progress_tracker.set_state("analyst", "Analyst agent reviewing ranked signals", True)
         self._log("Stage: analyst started")
         analyst_output = await self.analyst_agent.run(scored_items)
         analyst_duration_ms = self._duration_ms(analyst_started)
@@ -71,6 +78,7 @@ class PipelineOrchestrator:
         )
 
         critic_started = perf_counter()
+        progress_tracker.set_state("critic", "Critic agent challenging the analyst", True)
         self._log("Stage: critic started")
         critic_output = await self.critic_agent.run(analyst_output, scored_items)
         critic_duration_ms = self._duration_ms(critic_started)
@@ -99,6 +107,7 @@ class PipelineOrchestrator:
         )
 
         synthesis_started = perf_counter()
+        progress_tracker.set_state("synthesis", "Building final decision output", True)
         self._log("Stage: synthesis started")
         result = self.synthesiser.merge(analyst_output, critic_output, scored_items)
         self._log(f"Stage: synthesis completed | key_signals={len(result.key_signals)}")
@@ -123,6 +132,12 @@ class PipelineOrchestrator:
             query_tokens=0,
             total_tokens=total_tokens,
         )
+        if eval_mode:
+            progress_tracker.set_state("evaluation", "Running baseline comparison", True)
+            self._log("Stage: evaluation started")
+            result.baseline_comparison = await self.evaluation_comparer.compare(raw_items, result)
+            self._log("Stage: evaluation completed")
+        progress_tracker.set_state("complete", "Pipeline run completed", False)
         self._log(
             f"Pipeline completed | total_tokens={total_tokens} | trace_entries={len(trace)} | run_id={result.run_id}"
         )
