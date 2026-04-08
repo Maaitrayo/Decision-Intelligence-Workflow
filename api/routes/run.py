@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from pipeline.db import get_db_session
 from pipeline.orchestrator import PipelineOrchestrator
-from pipeline.repository import RunRepository, run_record_to_summary
+from pipeline.repository import RunRepository, run_record_to_model, run_record_to_summary
 
 
 router = APIRouter(prefix="/api/runs", tags=["runs"])
@@ -21,13 +21,13 @@ async def list_runs(db: Session = Depends(get_db_session)) -> list[dict[str, str
 
 
 @router.get("/{run_id}")
-async def get_run(run_id: str, db: Session = Depends(get_db_session)) -> dict[str, str]:
+async def get_run(run_id: str, db: Session = Depends(get_db_session)) -> dict:
     repository = RunRepository(db)
     run = repository.get_run(run_id)
     if run is None:
         raise HTTPException(status_code=404, detail="Run not found")
 
-    return run_record_to_summary(run)
+    return run_record_to_model(run).model_dump(mode="json")
 
 
 @router.post("")
