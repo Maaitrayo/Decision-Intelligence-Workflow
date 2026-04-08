@@ -8,6 +8,7 @@ dependencies = [
     "beautifulsoup4",
     "fastapi",
     "feedparser",
+    "google-genai",
     "httpx",
     "pydantic-settings",
     "sqlalchemy",
