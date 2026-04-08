@@ -35,4 +35,24 @@ class BaseAgent(ABC):
             contents=f"{system_prompt}\n\n{user_prompt}",
         )
         text = response.text or "{}"
-        return json.loads(text)
+        return self._parse_json_response(text)
+
+    @staticmethod
+    def _parse_json_response(text: str) -> dict:
+        candidate = text.strip()
+
+        if candidate.startswith("```"):
+            lines = candidate.splitlines()
+            if lines:
+                lines = lines[1:]
+            if lines and lines[-1].strip() == "```":
+                lines = lines[:-1]
+            candidate = "\n".join(lines).strip()
+
+        try:
+            return json.loads(candidate)
+        except json.JSONDecodeError as exc:
+            raise ValueError(
+                "Gemini returned non-JSON content. "
+                f"Raw response: {text[:1000]}"
+            ) from exc
