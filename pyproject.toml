@@ -1,7 +1,16 @@
 [project]
 name = "decision-intelligence-workflow"
 version = "0.1.0"
-description = "Add your description here"
+description = "Decision intelligence workflow for AI and tech signal tracking"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "beautifulsoup4",
+    "fastapi",
+    "feedparser",
+    "httpx",
+    "pydantic-settings",
+    "sqlalchemy",
+    "uvicorn",
+    "greenlet>=3.0.3,<3.1"
+]
