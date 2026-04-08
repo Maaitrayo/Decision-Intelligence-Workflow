@@ -7,7 +7,15 @@ from pipeline.db_models import (
     TraceEntryRecord,
     UncertaintyRecord,
 )
-from pipeline.models import IgnoredSignal, KeySignal, RunResult, TraceEntry
+from pipeline.models import (
+    ComparisonResult,
+    ContradictionRecord,
+    IgnoredSignal,
+    KeySignal,
+    RunResult,
+    TokenUsage,
+    TraceEntry,
+)
 
 
 class RunRepository:
@@ -130,4 +138,35 @@ def trace_entry_record_to_model(record: TraceEntryRecord) -> TraceEntry:
         tokens_used=record.tokens_used,
         duration_ms=record.duration_ms,
         timestamp=record.created_at,
+    )
+
+
+def uncertainty_record_to_model(record: UncertaintyRecord) -> ContradictionRecord:
+    return ContradictionRecord(
+        signal_a=record.signal_a,
+        signal_b=record.signal_b,
+        description=record.description,
+    )
+
+
+def run_record_to_model(record: RunRecord) -> RunResult:
+    baseline_comparison = None
+    if record.baseline_summary:
+        baseline_comparison = ComparisonResult(summary=record.baseline_summary)
+
+    return RunResult(
+        run_id=record.id,
+        timestamp=record.created_at,
+        executive_summary=record.executive_summary,
+        key_signals=[key_signal_record_to_model(item) for item in record.key_signals],
+        ignored_signals=[ignored_signal_record_to_model(item) for item in record.ignored_signals],
+        uncertainties=[uncertainty_record_to_model(item) for item in record.uncertainties],
+        trace=[trace_entry_record_to_model(item) for item in record.trace_entries],
+        baseline_comparison=baseline_comparison,
+        token_usage=TokenUsage(
+            analyst_tokens=record.analyst_tokens,
+            critic_tokens=record.critic_tokens,
+            query_tokens=record.query_tokens,
+            total_tokens=record.total_tokens,
+        ),
     )
