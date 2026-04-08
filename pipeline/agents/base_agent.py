@@ -14,7 +14,7 @@ class BaseAgent(ABC):
             raise ValueError("GEMINI_API_KEY is required to run LLM-backed agents.")
 
         self.client = genai.Client(api_key=settings.gemini_api_key)
-        self.model = "gemini-2.5-flash"
+        self.model = "gemini-3-flash-preview"
         self.last_tokens_used = 0
 
     @staticmethod

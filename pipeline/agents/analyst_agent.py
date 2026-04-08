@@ -23,7 +23,7 @@ class AnalystAgent(BaseAgent):
                 title=signal.get("title", ""),
                 summary=signal.get("summary", ""),
                 source=signal.get("source", ""),
-                confidence=signal.get("confidence"),
+                confidence=self._normalize_confidence(signal.get("confidence")),
             )
             for signal in payload.get("signals", [])
             if signal.get("title")
@@ -34,3 +34,17 @@ class AnalystAgent(BaseAgent):
             weak_claims=[claim for claim in payload.get("weak_claims", []) if isinstance(claim, str)],
             reasoning=str(payload.get("reasoning", "")),
         )
+
+    @staticmethod
+    def _normalize_confidence(value: object) -> str:
+        if isinstance(value, str):
+            return value.lower()
+
+        if isinstance(value, (int, float)):
+            if value >= 0.8:
+                return "high"
+            if value >= 0.5:
+                return "medium"
+            return "low"
+
+        return "medium"
