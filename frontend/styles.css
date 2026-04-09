@@ -227,7 +227,7 @@ button:disabled {
 .workspace {
   min-width: 0;
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
 .panel {
@@ -261,23 +261,22 @@ button:disabled {
   letter-spacing: 0.02em;
 }
 
-.workspace-grid {
+.workspace-columns {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.workspace-grid-primary {
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  gap: 12px;
   align-items: start;
 }
 
-.workspace-grid-secondary {
-  grid-template-columns: minmax(0, 1.35fr) minmax(340px, 0.85fr);
+.workspace-column {
+  display: grid;
+  gap: 12px;
+  align-content: start;
 }
 
 .feature-panel {
-  min-height: 180px;
+  min-height: 0;
+  align-self: start;
 }
 
 .feature-panel-summary {
@@ -288,7 +287,7 @@ button:disabled {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.75fr);
   gap: 14px;
-  margin-top: 12px;
+  margin-top: 10px;
   align-items: start;
 }
 
@@ -338,7 +337,7 @@ button:disabled {
 .chat-thread {
   display: grid;
   gap: 10px;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .item-card,
@@ -375,7 +374,7 @@ button:disabled {
 
 .trace-card {
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .trace-card h3 {
@@ -386,6 +385,12 @@ button:disabled {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
+}
+
+#summary-output,
+#uncertainties-output,
+#trace-output {
+  align-content: start;
 }
 
 .trace-metric {
@@ -456,9 +461,7 @@ textarea:focus {
     height: auto;
   }
 
-  .workspace-grid,
-  .workspace-grid-primary,
-  .workspace-grid-secondary,
+  .workspace-columns,
   .panel-hero,
   .summary-layout {
     grid-template-columns: 1fr;

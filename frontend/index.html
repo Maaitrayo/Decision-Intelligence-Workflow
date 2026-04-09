@@ -46,91 +46,93 @@
           </div>
         </header>
 
-        <section class="workspace-grid workspace-grid-primary">
-          <article class="panel feature-panel feature-panel-summary">
-            <div class="section-heading">
-              <h2>Executive Summary</h2>
-            </div>
-            <div id="summary-layout" class="summary-layout summary-layout-compact">
-              <div id="summary-output" class="summary-copy">
-                No run yet.
+        <section class="workspace-columns">
+          <div class="workspace-column">
+            <article class="panel feature-panel feature-panel-summary">
+              <div class="section-heading">
+                <h2>Executive Summary</h2>
               </div>
-              <div id="summary-metrics" class="summary-metrics" hidden>
-                <article class="metric-card">
-                  <span class="metric-label">Signals</span>
-                  <strong id="metric-signals" class="metric-value">0</strong>
-                </article>
-                <article class="metric-card">
-                  <span class="metric-label">Uncertainties</span>
-                  <strong id="metric-uncertainties" class="metric-value">0</strong>
-                </article>
-                <article class="metric-card">
-                  <span class="metric-label">Trace Steps</span>
-                  <strong id="metric-trace" class="metric-value">0</strong>
-                </article>
-                <article class="metric-card">
-                  <span class="metric-label">Tokens</span>
-                  <strong id="metric-tokens" class="metric-value">0</strong>
-                </article>
+              <div id="summary-layout" class="summary-layout summary-layout-compact">
+                <div id="summary-output" class="summary-copy">
+                  No run yet.
+                </div>
+                <div id="summary-metrics" class="summary-metrics" hidden>
+                  <article class="metric-card">
+                    <span class="metric-label">Signals</span>
+                    <strong id="metric-signals" class="metric-value">0</strong>
+                  </article>
+                  <article class="metric-card">
+                    <span class="metric-label">Uncertainties</span>
+                    <strong id="metric-uncertainties" class="metric-value">0</strong>
+                  </article>
+                  <article class="metric-card">
+                    <span class="metric-label">Trace Steps</span>
+                    <strong id="metric-trace" class="metric-value">0</strong>
+                  </article>
+                  <article class="metric-card">
+                    <span class="metric-label">Tokens</span>
+                    <strong id="metric-tokens" class="metric-value">0</strong>
+                  </article>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="panel feature-panel">
-            <div class="section-heading">
-              <h2>Top Signals</h2>
-            </div>
-            <div id="signals-output" class="stack-list">
-              <p class="empty-state">No signals to show.</p>
-            </div>
-          </article>
+            <article class="panel feature-panel">
+              <div class="section-heading">
+                <h2>Uncertainties</h2>
+              </div>
+              <div id="uncertainties-output" class="stack-list">
+                <p class="empty-state">No uncertainties surfaced yet.</p>
+              </div>
+            </article>
 
-          <article class="panel feature-panel">
-            <div class="section-heading">
-              <h2>Uncertainties</h2>
-            </div>
-            <div id="uncertainties-output" class="stack-list">
-              <p class="empty-state">No uncertainties surfaced yet.</p>
-            </div>
-          </article>
+            <article class="panel feature-panel">
+              <div class="section-heading">
+                <h2>Trace</h2>
+                <span class="section-meta">stage · duration · tokens · outputs</span>
+              </div>
+              <div id="trace-output" class="stack-list">
+                <p class="empty-state">No trace entries yet.</p>
+              </div>
+            </article>
+          </div>
 
-          <article class="panel feature-panel">
-            <div class="section-heading">
-              <h2>Ignored Signals</h2>
-            </div>
-            <div id="ignored-output" class="stack-list">
-              <p class="empty-state">No ignored items yet.</p>
-            </div>
-          </article>
-        </section>
+          <div class="workspace-column">
+            <article class="panel feature-panel">
+              <div class="section-heading">
+                <h2>Top Signals</h2>
+              </div>
+              <div id="signals-output" class="stack-list">
+                <p class="empty-state">No signals to show.</p>
+              </div>
+            </article>
 
-        <section class="workspace-grid workspace-grid-secondary">
-          <article class="panel feature-panel">
-            <div class="section-heading">
-              <h2>Trace</h2>
-              <span class="section-meta">stage · duration · tokens · outputs</span>
-            </div>
-            <div id="trace-output" class="stack-list">
-              <p class="empty-state">No trace entries yet.</p>
-            </div>
-          </article>
+            <article class="panel feature-panel">
+              <div class="section-heading">
+                <h2>Ignored Signals</h2>
+              </div>
+              <div id="ignored-output" class="stack-list">
+                <p class="empty-state">No ignored items yet.</p>
+              </div>
+            </article>
 
-          <article class="panel feature-panel">
-            <div class="section-heading">
-              <h2>Follow-up Chat</h2>
-            </div>
-            <div id="chat-output" class="chat-thread">
-              <p class="empty-state">Open a run to start a grounded follow-up chat.</p>
-            </div>
-            <form id="chat-form" class="chat-form">
-              <textarea
-                id="chat-input"
-                rows="3"
-                placeholder="Ask about risks, contradictions, or what action matters."
-              ></textarea>
-              <button id="chat-submit" type="submit">Ask</button>
-            </form>
-          </article>
+            <article class="panel feature-panel">
+              <div class="section-heading">
+                <h2>Follow-up Chat</h2>
+              </div>
+              <div id="chat-output" class="chat-thread">
+                <p class="empty-state">Open a run to start a grounded follow-up chat.</p>
+              </div>
+              <form id="chat-form" class="chat-form">
+                <textarea
+                  id="chat-input"
+                  rows="3"
+                  placeholder="Ask about risks, contradictions, or what action matters."
+                ></textarea>
+                <button id="chat-submit" type="submit">Ask</button>
+              </form>
+            </article>
+          </div>
         </section>
       </section>
     </main>
