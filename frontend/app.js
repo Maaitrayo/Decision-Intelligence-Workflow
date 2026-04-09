@@ -6,7 +6,13 @@ const runHistory = document.getElementById("run-history");
 const workspaceTitle = document.getElementById("workspace-title");
 const workspaceSubtitle = document.getElementById("workspace-subtitle");
 const statusPill = document.getElementById("status-pill");
+const summaryLayout = document.getElementById("summary-layout");
 const summaryOutput = document.getElementById("summary-output");
+const summaryMetrics = document.getElementById("summary-metrics");
+const metricSignals = document.getElementById("metric-signals");
+const metricUncertainties = document.getElementById("metric-uncertainties");
+const metricTrace = document.getElementById("metric-trace");
+const metricTokens = document.getElementById("metric-tokens");
 const signalsOutput = document.getElementById("signals-output");
 const uncertaintiesOutput = document.getElementById("uncertainties-output");
 const ignoredOutput = document.getElementById("ignored-output");
@@ -152,12 +158,23 @@ async function pollProgress() {
 
 function renderRun(run) {
   selectedRun = run;
+  const signalCount = run.key_signals?.length || 0;
+  const uncertaintyCount = run.uncertainties?.length || 0;
+  const traceCount = run.trace?.length || 0;
+  const totalTokens = run.token_usage?.total_tokens || 0;
+
   setWorkspace(
     run.run_id ? `Analysis ${shortId(run.run_id)}` : "Analysis loaded",
-    `${run.key_signals?.length || 0} signals, ${run.uncertainties?.length || 0} uncertainties, ${run.trace?.length || 0} trace entries`
+    `${signalCount} signals, ${uncertaintyCount} uncertainties, ${traceCount} trace entries`
   );
 
   summaryOutput.textContent = run.executive_summary || "No executive summary available.";
+  metricSignals.textContent = String(signalCount);
+  metricUncertainties.textContent = String(uncertaintyCount);
+  metricTrace.textContent = String(traceCount);
+  metricTokens.textContent = String(totalTokens);
+  toggleSummaryMetrics(signalCount, uncertaintyCount, traceCount, totalTokens);
+
   renderSignals(run.key_signals || []);
   renderUncertainties(run.uncertainties || []);
   renderIgnored(run.ignored_signals || []);
@@ -231,9 +248,26 @@ function renderTrace(entries) {
     .map(
       (entry) => `
         <article class="trace-card">
-          <span class="trace-meta">${escapeHtml(entry.stage)} · ${entry.duration_ms || 0}ms · ${entry.tokens_used || 0} tokens</span>
+          <span class="trace-meta">${escapeHtml(entry.stage)}</span>
           <h3>${escapeHtml(entry.decision || "No decision note")}</h3>
-          <p>${escapeHtml(entry.outputs_summary || "")}</p>
+          <div class="trace-metrics">
+            <div class="trace-metric">
+              <span class="trace-metric-label">Duration</span>
+              <span class="trace-metric-value">${escapeHtml(String(entry.duration_ms || 0))} ms</span>
+            </div>
+            <div class="trace-metric">
+              <span class="trace-metric-label">Tokens</span>
+              <span class="trace-metric-value">${escapeHtml(String(entry.tokens_used || 0))}</span>
+            </div>
+            <div class="trace-metric">
+              <span class="trace-metric-label">Inputs</span>
+              <span class="trace-metric-value">${escapeHtml(entry.inputs_summary || "n/a")}</span>
+            </div>
+            <div class="trace-metric">
+              <span class="trace-metric-label">Outputs</span>
+              <span class="trace-metric-value">${escapeHtml(entry.outputs_summary || "n/a")}</span>
+            </div>
+          </div>
         </article>
       `
     )
@@ -269,10 +303,7 @@ async function submitChat(event) {
   chatSubmit.disabled = true;
   setStatus("Querying");
 
-  const optimisticMessages = [
-    ...collectRenderedMessages(),
-    { role: "user", content: question },
-  ];
+  const optimisticMessages = [...collectRenderedMessages(), { role: "user", content: question }];
   renderChat(optimisticMessages);
   chatInput.value = "";
 
@@ -294,10 +325,7 @@ async function submitChat(event) {
 
     const payload = await response.json();
     currentSessionId = payload.session_id || currentSessionId;
-    renderChat([
-      ...optimisticMessages,
-      { role: "assistant", content: payload.answer || "No answer returned." },
-    ]);
+    renderChat([...optimisticMessages, { role: "assistant", content: payload.answer || "No answer returned." }]);
     setStatus("Session Loaded");
   } catch (error) {
     renderChat([
@@ -328,6 +356,11 @@ function setWorkspace(title, subtitle) {
 
 function renderErrorState(message) {
   summaryOutput.textContent = message;
+  metricSignals.textContent = "0";
+  metricUncertainties.textContent = "0";
+  metricTrace.textContent = "0";
+  metricTokens.textContent = "0";
+  toggleSummaryMetrics(0, 0, 0, 0);
   signalsOutput.innerHTML = '<p class="empty-state">No signals to show.</p>';
   uncertaintiesOutput.innerHTML = '<p class="empty-state">No uncertainties surfaced yet.</p>';
   ignoredOutput.innerHTML = '<p class="empty-state">No ignored items yet.</p>';
@@ -363,6 +396,12 @@ function stopProgressPolling() {
     window.clearInterval(progressTimer);
     progressTimer = null;
   }
+}
+
+function toggleSummaryMetrics(signalCount, uncertaintyCount, traceCount, totalTokens) {
+  const hasMetrics = signalCount > 0 || uncertaintyCount > 0 || traceCount > 0 || totalTokens > 0;
+  summaryMetrics.hidden = !hasMetrics;
+  summaryLayout.classList.toggle("summary-layout-compact", !hasMetrics);
 }
 
 sidebarToggle.addEventListener("click", () => {
