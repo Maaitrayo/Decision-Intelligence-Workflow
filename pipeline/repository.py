@@ -126,7 +126,7 @@ class RunRepository:
             .options(selectinload(ChatSessionRecord.messages))
             .filter(ChatSessionRecord.run_id == run_id)
             .order_by(ChatSessionRecord.created_at.desc())
-            .one_or_none()
+            .first()
         )
 
     def add_chat_message(self, session_id: str, role: str, content: str) -> ChatMessageRecord:
