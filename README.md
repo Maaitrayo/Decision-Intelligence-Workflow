@@ -362,7 +362,7 @@ The UI reflects:
 - Stage-wise progress (ingestion → scoring → agents → synthesis)
 - System responsiveness during async execution
 
-![Critic Agent Analysis Running](assets\images\running_state_critic.png)
+![Critic Agent Analysis Running](assets/images/running_state_critic.png)
 
 ---
 
@@ -377,7 +377,7 @@ Includes:
 
 This is critical for auditability and trust.
 
-![Trace and Ignored Signals](assets\images\trace_panel.png)
+![Trace and Ignored Signals](assets/images/trace_panel.png)
 
 ---
 
@@ -390,7 +390,7 @@ Features:
 - Persistent conversation history
 - Answers generated using stored signals (no re-run)
 
-![Follow-up Chat](assets\images\followup_qa.png)
+![Follow-up Chat](assets/images/followup_qa.png)
 
 ---
 
