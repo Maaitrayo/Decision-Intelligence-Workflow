@@ -68,7 +68,7 @@ async def query_run(
 
     client = genai.Client(api_key=settings.gemini_api_key)
     response = await client.aio.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3-flash-preview",
         contents=(
             "You are answering a follow-up question about a saved decision intelligence run. "
             "Use only the provided run context and prior chat history. "
