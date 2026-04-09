@@ -11,7 +11,7 @@ class NaiveSummariser:
             raise ValueError("GEMINI_API_KEY is required to run the baseline summariser.")
 
         self.client = genai.Client(api_key=settings.gemini_api_key)
-        self.model = "gemini-2.5-flash"
+        self.model = "gemini-3-flash-preview"
 
     async def run(self, items: list[RawItem]) -> str:
         context = self._build_context(items)
