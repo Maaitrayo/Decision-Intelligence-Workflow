@@ -1,0 +1,2708 @@
+{
+  "run_id": "a6ba8fa1-82dd-47ec-adf7-9043099e5941",
+  "timestamp": "2026-04-08T19:27:12.562925Z",
+  "executive_summary": "Top signals centered on Personalized & Adaptive AI Agents Gain Traction, Multi-Agent Robotics Leverages High-Fidelity Simulation and Advanced Perception, Multimodal AI Focus Shifts to Efficiency, Interpretability, and Action-Oriented Integration. The critic flagged 2 uncertainties that need review before action.",
+  "key_signals": [
+    {
+      "title": "Personalized & Adaptive AI Agents Gain Traction",
+      "summary": "There is a growing trend in developing AI agents capable of learning and adapting to individual users or tasks, moving beyond static functionalities to personalized growth and assistance. This is exemplified by 'Hermes-agent' which 'grows with you' and 'DeepTutor' a 'personalized learning assistant', indicating a strong push towards more tailored and evolving AI interactions.",
+      "source": "Analysis of high-scoring GitHub trending projects (NousResearch/hermes-agent, HKUDS/DeepTutor)",
+      "confidence": "high"
+    },
+    {
+      "title": "Multi-Agent Robotics Leverages High-Fidelity Simulation and Advanced Perception",
+      "summary": "Robotics research is accelerating through the development of sophisticated multi-agent systems, bolstered by high-fidelity simulation environments for safe testing and advanced multi-agent perception techniques (e.g., LiDAR-based environmental understanding). This also extends to multi-agent collaboration, including the integration of Multimodal Large Language Models (MLLMs) for assistive intelligence, highlighting a move towards complex, coordinated AI systems in physical and simulated environments.",
+      "source": "Analysis of high-scoring arXiv papers (Unreal Robotics Lab, Unsupervised Multi-agent and Single-agent Perception, MARS, CoEnv)",
+      "confidence": "high"
+    },
+    {
+      "title": "Multimodal AI Focus Shifts to Efficiency, Interpretability, and Action-Oriented Integration",
+      "summary": "The field of Vision-Language Models (VLMs) and Multimodal Large Language Models (MLLMs) is maturing, with a significant emphasis on making these models more practical and deployable. Key areas of development include improving interpretability and transparency, enhancing computational efficiency, and adapting them for lightweight, specific real-world applications (e.g., species recognition, construction safety hazard identification) and direct action-oriented tasks (Vision-Language-Action models).",
+      "source": "Analysis of high-scoring arXiv papers (MIMIC, Firebolt-VL, From Reasoning to Pixels, VLA-InfoEntropy, Learn to Rank, Lightweight Multimodal Adaptation, Integration of Object Detection and Small VLMs)",
+      "confidence": "high"
+    },
+    {
+      "title": "New Vectors Emerge for Bypassing LLM Safety Mechanisms",
+      "summary": "Despite ongoing efforts in safety alignment and refusal training, Large Language Models (LLMs) continue to exhibit vulnerabilities. Recent research highlights how novel attack vectors, such as emotional stimuli and phonetic perturbations, can expose tokenizer-rooted safety gaps, allowing circumvention of intended safety controls and raising concerns about robust LLM deployment.",
+      "source": "Analysis of high-scoring arXiv papers (FreakOut-LLM, Phonetic Perturbations Reveal Tokenizer-Rooted Safety Gaps in LLMs)",
+      "confidence": "high"
+    }
+  ],
+  "ignored_signals": [
+    {
+      "title": "MARL-GPT: Foundation Model for Multi-Agent Reinforcement Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Routing-Based Continual Learning for Multimodal Large Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MG$^2$-RAG: Multi-Granularity Graph for Multimodal Retrieval-Augmented Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Gaze-Regularized Vision-Language-Action Models for Robotic Manipulation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PDMP: Rethinking Balanced Multimodal Learning via Performance-Dominant Modality Prioritization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PRIME: Prototype-Driven Multimodal Pretraining for Cancer Prognosis with Missing Modalities",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MetaEmbed: Scaling Multimodal Retrieval at Test-Time with Flexible Late Interaction",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "CI-ICM: Channel Importance-driven Learned Image Coding for Machines",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SigLino: Efficient Multi-Teacher Distillation for Agglomerative Vision Foundation Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MMEmb-R1: Reasoning-Enhanced Multimodal Embedding with Pair-Aware Selection and Adaptive Control",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ForgeryGPT: A Multimodal LLM for Interpretable Image Forgery Detection and Localization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "COSMO-Agent: Tool-Augmented Agent for Closed-loop Optimization,Simulation,and Modeling Orchestration",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Experience Transfer for Multimodal LLM Agents in Minecraft Game",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Evaluation Before Generation: A Paradigm for Robust Multimodal Sentiment Analysis with Missing Modalities",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "NoisyGRPO: Incentivizing Multimodal CoT Reasoning via Noise Injection and Bayesian Estimation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "CoStream: Codec-Guided Resource-Efficient System for Video Streaming Analytics",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Social Dynamics as Critical Vulnerabilities that Undermine Objective Decision-Making in LLM Collectives",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "HaloProbe: Bayesian Detection and Mitigation of Object Hallucinations in Vision-Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Uncovering Linguistic Fragility in Vision-Language-Action Models via Diversity-Aware Red Teaming",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "R3G: A Reasoning--Retrieval--Reranking Framework for Vision-Centric Answer Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Let Geometry GUIDE: Layer-wise Unrolling of Geometric Priors in Multimodal LLMs",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "3D Smoke Scene Reconstruction Guided by Vision Priors from Multimodal Large Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ACE-Bench: Agent Configurable Evaluation with Scalable Horizons and Controllable Difficulty under Lightweight Environments",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "DVGT-2: Vision-Geometry-Action Model for Autonomous Driving at Scale",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Graph of Skills: Dependency-Aware Structural Retrieval for Massive Agent Skills",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Towards Trustworthy Report Generation: A Deep Research Agent with Progressive Confidence Estimation and Calibration",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "UAVReason: A Unified, Large-Scale Benchmark for Multimodal Aerial Scene Reasoning and Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Aligned Vector Quantization for Edge-Cloud Collabrative Vision-Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "HybridKV: Hybrid KV Cache Compression for Efficient Multimodal Large Language Model Inference",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Extending ZACH-ViT to Robust Medical Imaging: Corruption and Adversarial Stress Testing in Low-Data Regimes",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Learning What Matters: Dynamic Dimension Selection and Aggregation for Interpretable Vision-Language Reward Modeling",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Online In-Context Distillation for Low-Resource Vision Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Mixture-of-Modality-Experts with Holistic Token Learning for Fine-Grained Multimodal Visual Analytics in Driver Action Recognition",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Deep Researcher Agent: An Autonomous Framework for 24/7 Deep Learning Experimentation with Zero-Cost Monitoring",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "\"When to Hand Off, When to Work Together\": Expanding Human-Agent Co-Creative Collaboration through Concurrent Interaction",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "One-shot Adaptation of Humanoid Whole-body Motion with Walking Priors",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "RCP: Representation Consistency Pruner for Mitigating Distribution Shift in Large Vision-Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Purify-then-Align: Towards Robust Human Sensing under Modality Missing with Knowledge Distillation from Noisy Multimodal Teacher",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Multi-Agent Pathfinding with Non-Unit Integer Edge Costs via Enhanced Conflict-Based Search and Graph Discretization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "QA-MoE: Towards a Continuous Reliability Spectrum with Quality-Aware Mixture of Experts for Robust Multimodal Sentiment Analysis",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Safety, Security, and Cognitive Risks in World Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ClawsBench: Evaluating Capability and Safety of LLM Productivity Agents in Simulated Workspaces",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Final Report, Center for Computer-Integrated Computer-Integrated Surgical Systems and Technology, NSF ERC Cooperative Agreement EEC9731748, Volume 1",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Memory Intelligence Agent",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Feature-Aware Anisotropic Local Differential Privacy for Utility-Preserving Graph Representation Learning in Metal Additive Manufacturing",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "From Retinal Evidence to Safe Decisions: RETINA-SAFE and ECRT for Hallucination Risk Triage in Medical LLMs",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Code Review Agent Benchmark",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Operational Noncommutativity in Sequential Metacognitive Judgments",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Auditable Agents",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Learning to Retrieve from Agent Trajectories",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MemFactory: Unified Inference & Training Framework for Agent Memory",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "FinCriticalED: A Visual Benchmark for Financial Fact-Level OCR",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MolDA: Molecular Understanding and Generation via Large Language Diffusion Model",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "URSA: The Universal Research and Scientific Agent",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "EduIllustrate: Towards Scalable Automated Generation Of Multimodal Educational Content",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Advancing AI Research Assistants with Expert-Involved Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "TRANSPORTER: Transferring Visual Semantics from VLM Manifolds",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Context-Agent: Dynamic Discourse Trees for Non-Linear Dialogue",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Gradual Cognitive Externalization: From Modeling Cognition to Constituting It",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Closed-Loop Autonomous Software Development via Jira-Integrated Backlog Orchestration: A Case Study in Deterministic Control and Safety-Constrained Automation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "StarVLA: A Lego-like Codebase for Vision-Language-Action Model Developing",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Less Detail, Better Answers: Degradation-Driven Prompting for VQA",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MedXIAOHE: A Comprehensive Recipe for Building Medical MLLMs",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Beyond Semantic Search: Towards Referential Anchoring in Composed Image Retrieval",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Semantic-Topological Graph Reasoning for Language-Guided Pulmonary Screening",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ProMQA-Assembly: Multimodal Procedural QA Dataset on Assembly",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Framing Effects in Independent-Agent Large Language Models: A Cross-Family Behavioral Analysis",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "High-Resolution Single-Shot Polarimetric Imaging Made Easy",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Probing Intrinsic Medical Task Relationships: A Contrastive Learning Perspective",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MPM: Mutual Pair Merging for Efficient Vision Transformers",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SiLVi: Simple Interface for Labeling Video Interactions",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SGANet: Semantic and Geometric Alignment for Multimodal Multi-view Anomaly Detection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Cattle-CLIP: A Multimodal Framework for Cattle Behaviour Recognition from Video",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "VideoTIR: Accurate Understanding for Long Videos with Efficient Tool-Integrated Reasoning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "DialectGen: Benchmarking and Improving Dialect Robustness in Multimodal Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SVAgent: Storyline-Guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Breakthrough the Suboptimal Stable Point in Value-Factorization-Based Multi-Agent Reinforcement Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Gym-Anything: Turn any Software into an Agent Environment",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Beyond Semantics: Disentangling Information Scope in Sparse Autoencoders for CLIP",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "From Incomplete Architecture to Quantified Risk: Multimodal LLM-Driven Security Assessment for Cyber-Physical Systems",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Thinking with Video: Video Generation as a Promising Multimodal Reasoning Paradigm",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Synthesis of discrete-continuous quantum circuits with multimodal diffusion models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "HeartcareGPT: A Unified Multimodal ECG Suite for Dual Signal-Image Modeling and Understanding",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "TS-Agent: Understanding and Reasoning Over Raw Time Series via Iterative Insight Gathering",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "From Evidence to Verdict: An Agent-Based Forensic Framework for AI-Generated Image Detection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Move What Matters: Parameter-Efficient Domain Adaptation via Optimal Transport Flow for Collaborative Perception",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Watch Before You Answer: Learning from Visually Grounded Post-Training",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Evaluation of Randomization through Style Transfer for Enhanced Domain Generalization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Vision-Guided Iterative Refinement for Frontend Code Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "AICA-Bench: Holistically Examining the Capabilities of VLMs in Affective Image Content Analysis",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "DFM-VLA: Iterative Action Refinement for Robot Manipulation via Discrete Flow Matching",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LaSM: Layer-wise Scaling Mechanism for Defending Pop-up Attack on GUI Agents",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Reveal-to-Revise: Explainable Bias-Aware Generative Modeling with Multimodal Attention",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "TeamPath: Building MultiModal Pathology Experts with Reasoning AI Copilots",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Your LLM Agent Can Leak Your Data: Data Exfiltration via Backdoored Tool Use",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MA-IDS: Multi-Agent RAG Framework for IoT Network Intrusion Detection with an Experience Library",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "GESS: Multi-cue Guided Local Feature Learning via Geometric and Semantic Synergy",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ID-Selection: Importance-Diversity Based Visual Token Selection for Efficient LVLM Inference",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ICR-Drive: Instruction Counterfactual Robustness for End-to-End Language-Driven Autonomous Driving",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "GeoPredict: Leveraging Predictive Kinematics and 3D Gaussian Geometry for Precise VLA Manipulation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Vero: An Open RL Recipe for General Visual Reasoning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Perturb and Recover: Fine-tuning for Effective Backdoor Removal from CLIP",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Modality-Aware and Anatomical Vector-Quantized Autoencoding for Multimodal Brain MRI",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "DetailVerifyBench: A Benchmark for Dense Hallucination Localization in Long Image Captions",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SCMAPR: Self-Correcting Multi-Agent Prompt Refinement for Complex-Scenario Text-to-Video Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "AnyImageNav: Any-View Geometry for Precise Last-Meter Image-Goal Navigation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "EchoTrail-GUI: Building Actionable Memory for GUI Agents via Critic-Guided Self-Exploration",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LUDOBENCH: Evaluating LLM Behavioural Decision-Making Through Spot-Based Board Game Scenarios in Ludo",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "AgentHER: Hindsight Experience Replay for LLM Agent Trajectory Relabeling",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in Augmented Reality",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "RL-VLA$^3$: A Flexible and Asynchronous Reinforcement Learning Framework for VLA Training",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Modelling Cascading Physical Climate Risk in Supply Chains with Adaptive Firms: A Spatial Agent-Based Framework",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Boxer: Robust Lifting of Open-World 2D Bounding Boxes to 3D",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Is CLIP Cross-Eyed? Revealing and Mitigating Center Bias in the CLIP Family",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Not All Agents Matter: From Global Attention Dilution to Risk-Prioritized Game Planning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "A Synthetic Eye Movement Dataset for Script Reading Detection: Real Trajectory Replay on a 3D Simulator",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SnapFlow: One-Step Action Generation for Flow-Matching VLAs via Progressive Self-Distillation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Listen to Rhythm, Choose Movements: Autoregressive Multimodal Dance Generation via Diffusion and Mamba with Decoupled Dance Dataset",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MM-tau-p$^2$: Persona-Adaptive Prompting for Robust Multi-Modal Agent Evaluation in Dual-Control Settings",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SVC 2026: the Second Multimodal Deception Detection Challenge and the First Domain Generalized Remote Physiological Measurement Challenge",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "OGA-AID: Clinician-in-the-loop AI Report Drafting Assistant for Multimodal Observational Gait Analysis in Post-Stroke Rehabilitation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Can We Trust a Black-box LLM? LLM Untrustworthy Boundary Detection via Bias-Diffusion and Multi-Agent Reinforcement Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Multi-Modal Landslide Detection from Sentinel-1 SAR and Sentinel-2 Optical Imagery Using Multi-Encoder Vision Transformers and Ensemble Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "HKUDS /AI-Trader",
+      "source": "github_trending",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Pramana: Fine-Tuning Large Language Models for Epistemic Reasoning through Navya-Nyaya",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Proximity Measure of Information Object Features for Solving the Problem of Their Identification in Information Systems",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ReVEL: Multi-Turn Reflective LLM-Guided Heuristic Evolution via Structured Performance Feedback",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Algebraic Structure Discovery for Real World Combinatorial Optimisation Problems: A General Framework from Abstract Algebra to Quotient Space Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Generative AI for Video Trailer Synthesis: From Extractive Heuristics to Autoregressive Creativity",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Video-MME-v2: Towards the Next Stage in Benchmarks for Comprehensive Video Understanding",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ID-Sim: An Identity-Focused Similarity Metric",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "R3PM-Net: Real-time, Robust, Real-world Point Matching Network",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Part-Level 3D Gaussian Vehicle Generation with Joint and Hinge Axis Estimation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MedGemma 1.5 Technical Report",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Simultaneous Dual-View Mammogram Synthesis Using Denoising Diffusion Probabilistic Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Uncertainty-Guided Latent Diagnostic Trajectory Learning for Sequential Clinical Diagnosis",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Non-monotonic causal discovery with Kolmogorov-Arnold Fuzzy Cognitive Maps",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "A mathematical theory of evolution for self-designing AIs",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Lightweight True In-Pixel Encryption with FeFET Enabled Pixel Design for Secure Imaging",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "IntentScore: Intent-Conditioned Action Evaluation for Computer-Use Agents",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Bypassing the CSI Bottleneck: MARL-Driven Spatial Control for Reflector Arrays",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Learning to Focus: CSI-Free Hierarchical MARL for Reconfigurable Reflectors",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Instruction-Tuned LLMs for Parsing and Mining Unstructured Logs on Leadership HPC Systems",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MIRAGE: Benchmarking and Aligning Multi-Instance Image Editing",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LSRM: High-Fidelity Object-Centric Reconstruction via Scaled Context Windows",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "OrthoFuse: Training-free Riemannian Fusion of Orthogonal Style-Concept Adapters for Diffusion Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Hierarchical Mesh Transformers with Topology-Guided Pretraining for Morphometric Analysis of Brain Structures",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Attribution Bias in Large Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Active Measurement of Two-Point Correlations",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "From Governance Norms to Enforceable Controls: A Layered Translation Method for Runtime Guardrails in Agentic AI",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "EAGLE: Edge-Aware Graph Learning for Proactive Delivery Delay Prediction in Smart Logistics Networks",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Protecting and Preserving Protest Dynamics for Responsible Analysis",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Coverage Optimization for Camera View Selection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Toward Unified Fine-Grained Vehicle Classification and Automatic License Plate Recognition",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Simulating the Evolution of Alignment and Values in Machine Intelligence",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Pressure, What Pressure? Sycophancy Disentanglement in Language Models via Reward Decomposition",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "From Measurement to Mitigation: Quantifying and Reducing Identity Leakage in Image Representation Encoders with Linear Subspace Removal",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SmokeGS-R: Physics-Guided Pseudo-Clean 3DGS for Real-World Multi-View Smoke Restoration",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Indoor Asset Detection in Large Scale 360{\\deg} Drone-Captured Imagery via 3D Gaussian Splatting",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "TRACE: Capability-Targeted Agentic Training",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Dynamic Agentic AI Expert Profiler System Architecture for Multidomain Intelligence Modeling",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LatentAudit: Real-Time White-Box Faithfulness Monitoring for Retrieval-Augmented Generation with Verifiable Deployment",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Rethinking IRSTD: Single-Point Supervision Guided Encoder-only Framework is Enough for Infrared Small Target Detection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "TFRBench: A Reasoning Benchmark for Evaluating Forecasting Systems",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "3DTurboQuant: Training-Free Near-Optimal Quantization for 3D Reconstruction Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LLM-as-Judge for Semantic Judging of Powerline Segmentation in UAV Inspection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Towards Effective In-context Cross-domain Knowledge Transfer via Domain-invariant-neurons-based Retrieval",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LUMOS: Universal Semi-Supervised OCT Retinal Layer Segmentation with Hierarchical Reliable Mutual Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Neural Assistive Impulses: Synthesizing Exaggerated Motions for Physics-based Characters",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Reason Analogically via Cross-domain Prior Knowledge: An Empirical Study of Cross-domain Knowledge Transfer for In-Context Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "HYVE: Hybrid Views for LLM Context Engineering over Machine Data",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LSGS-Loc: Towards Robust 3DGS-Based Visual Localization for Large-Scale UAV Scenarios",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Weather-Conditioned Branch Routing for Robust LiDAR-Radar 3D Object Detection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "CODESTRUCT: Code Agents over Structured Action Spaces",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "CRISP: Rank-Guided Iterative Squeezing for Robust Medical Image Segmentation under Domain Shift",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Learning to Synergize Semantic and Geometric Priors for Limited-Data Wheat Disease Segmentation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PRISM-MCTS: Learning from Reasoning Trajectories with Metacognitive Reflection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Cross-Stage Attention Propagation for Efficient Semantic Segmentation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Few-Shot Semantic Segmentation Meets SAM3",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Automated Auditing of Hospital Discharge Summaries for Care Transitions",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Human Interaction-Aware 3D Reconstruction from a Single Image",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Adaptive Serverless Resource Management via Slot-Survival Prediction and Event-Driven Lifecycle Control",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "OntoTKGE: Ontology-Enhanced Temporal Knowledge Graph Extrapolation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Unifying VLM-Guided Flow Matching and Spectral Anomaly Detection for Interpretable Veterinary Diagnosis",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "A Weak-Signal-Aware Framework for Subsurface Defect Detection: Mechanisms for Enhancing Low-SCR Hyperbolic Signatures",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "CLIP-Guided Data Augmentation for Night-Time Image Dehazing",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Geometrical Cross-Attention and Nonvoid Voxelization for Efficient 3D Medical Image Segmentation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "UniCreative: Unifying Long-form Logic and Short-form Sparkle via Reference-Free Reinforcement Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Market-Bench: Benchmarking Large Language Models on Economic and Trade Competition",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Cross-Resolution Diffusion Models via Network Pruning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ActivityEditor: Learning to Synthesize Physically Valid Human Mobility",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Inventory of the 12 007 Low-Dimensional Pseudo-Boolean Landscapes Invariant to Rank, Translation, and Rotation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SignalClaw: LLM-Guided Evolutionary Synthesis of Interpretable Traffic Signal Control Skills",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "A canonical generalization of OBDD",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "From Large Language Model Predicates to Logic Tensor Networks: Neurosymbolic Offer Validation in Regulated Procurement",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "EchoAgent: Towards Reliable Echocardiography Interpretation with \"Eyes\",\"Hands\" and \"Minds\"",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Physics-Aligned Spectral Mamba: Decoupling Semantics and Dynamics for Few-Shot Hyperspectral Target Detection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "WRF4CIR: Weight-Regularized Fine-Tuning Network for Composed Image Retrieval",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ResearchEVO: An End-to-End Framework for Automated Scientific Discovery and Documentation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Label Effects: Shared Heuristic Reliance in Trust Assessment by Humans and LLM-as-a-Judge",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "BPC-Net: Annotation-Free Skin Lesion Segmentation via Boundary Probability Calibration",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "FunRec: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "A Unified Foundation Model for All-in-One Multi-Modal Remote Sensing Image Restoration and Fusion with Language Prompting",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Beyond Behavior: Why AI Evaluation Needs a Cognitive Revolution",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PECKER: A Precisely Efficient Critical Knowledge Erasure Recipe For Machine Unlearning in Diffusion Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Towards Athlete Fatigue Assessment from Association Football Videos",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PanopticQuery: Unified Query-Time Reasoning for 4D Scenes",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Analogical Reasoning as a Doctor: A Foundation Model for Gastrointestinal Endoscopy Diagnosis",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "CuraLight: Debate-Guided Data Curation for LLM-Centered Traffic Signal Control",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "In Depth We Trust: Reliable Monocular Depth Supervision for Gaussian Splatting",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Can Large Language Models Reinvent Foundational Algorithms?",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Single-Stage Signal Attenuation Diffusion Model for Low-Light Image Enhancement and Denoising",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "FoleyDesigner: Immersive Stereo Foley Generation with Precise Spatio-Temporal Alignment for Film Clips",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ASSR-Net: Anisotropic Structure-Aware and Spectrally Recalibrated Network for Hyperspectral Image Fusion",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Improving Controllable Generation: Faster Training and Better Performance via $x_0$-Supervision",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Beyond the Beep: Scalable Collision Anticipation and Real-Time Explainability with BADAS-2.0",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Emergent social transmission of model-based representations without inference",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "RHVI-FDD: A Hierarchical Decoupling Framework for Low-Light Image Enhancement",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Sparse Gain Radio Map Reconstruction With Geometry Priors and Uncertainty-Guided Measurement Selection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "EfficientMonoHair: Fast Strand-Level Reconstruction from Monocular Video via Multi-View Direction Fusion",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Reciprocal Trust and Distrust in Artificial Intelligence Systems: The Hard Problem of Regulation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Reading Between the Pixels: An Inscriptive Jailbreak Attack on Text-to-Image Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Neural Network Pruning via QUBO Optimization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "When Do We Need LLMs? A Diagnostic for Language-Driven Bandits",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "JTON: A Token-Efficient JSON Superset with Zen Grid Tabular Encoding for Large Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Joint Knowledge Base Completion and Question Answering by Combining Large Language Models and Small Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Automatic dental superimposition of 3D intraorals and 2D photographs for human identification",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Physics-Aware Video Instance Removal Benchmark",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Selective Aggregation of Attention Maps Improves Diffusion-Based Visual Interpretation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Appearance Decomposition Gaussian Splatting for Multi-Traversal Reconstruction",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Saliency-Guided Representation with Consistency Policy Learning for Visual Unsupervised Reinforcement Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SonoSelect: Efficient Ultrasound Perception via Active Probe Exploration",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Leveraging Image Editing Foundation Models for Data-Efficient CT Metal Artifact Reduction",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Context-Value-Action Architecture for Value-Driven Large Language Model Agents",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "HumANDiff: Articulated Noise Diffusion for Motion-Consistent Human Video Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Beyond Compromise: Pareto-Lenient Consensus for Efficient Multi-Preference LLM Alignment",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Flowr -- Scaling Up Retail Supply Chain Operations Through Agentic AI in Large Scale Supermarket Chains",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "OmniCamera: A Unified Framework for Multi-task Video Generation with Arbitrary Camera Control",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Epistemic Blinding: An Inference-Time Protocol for Auditing Prior Contamination in LLM-Assisted Analysis",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "How LLMs Follow Instructions: Skillful Coordination, Not a Universal Mechanism",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Toward Aristotelian Medical Representations: Backpropagation-Free Layer-wise Analysis for Interpretable Generalized Metric Learning on MedMNIST",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Attention, May I Have Your Decision? Localizing Generative Choices in Diffusion Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "EDGE-Shield: Efficient Denoising-staGE Shield for Violative Content Filtering via Scalable Reference-Based Matching",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Graph-PiT: Enhancing Structural Coherence in Part-Based Image Synthesis via Graph Priors",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Scientific Graphics Program Synthesis via Dual Self-Consistency Reinforcement Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Artificial Intelligence and the Structure of Mathematics",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SEM-ROVER: Semantic Voxel-Guided Diffusion for Large-Scale Driving Scene Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PoM: A Linear-Time Replacement for Attention with the Polynomial Mixer",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Claw-Eval: Toward Trustworthy Evaluation of Autonomous Agents",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "The Character Error Vector: Decomposable errors for page-level OCR evaluation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "DiffHDR: Re-Exposing LDR Videos with Video Diffusion Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Action Images: End-to-End Policy Learning via Multiview Video Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Contextuality as an External Bookkeeping Cost under Fixed Shared-State Semantics",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Web Retrieval-Aware Chunking (W-RAC) for Efficient and Cost-Effective Retrieval-Augmented Generation Systems",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "TDA-RC: Task-Driven Alignment for Knowledge-Based Reasoning Chains in Large Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "The Illusion of Latent Generalization: Bi-directionality and the Reversal Curse",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Inclusion-of-Thoughts: Mitigating Preference Instability via Purifying the Decision Space",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SUMMIR: A Hallucination-Aware Framework for Ranking Sports Insights from LLMs",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "From PDF to RAG-Ready: Evaluating Document Conversion Frameworks for Domain-Specific Question Answering",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Synthetic Trust Attacks: Modeling How Generative AI Manipulates Human Decisions in Social Engineering Fraud",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "The Planetary Cost of AI Acceleration, Part II: The 10th Planetary Boundary and the 6.5-Year Countdown",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Self-Supervised Foundation Model for Calcium-imaging Population Dynamics",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Measuring the Permission Gate: A Stress-Test Evaluation of Claude Code's Auto Mode",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Squeez: Task-Conditioned Tool-Output Pruning for Coding Agents",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "CURE:Circuit-Aware Unlearning for LLM-based Recommendation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Cactus: Accelerating Auto-Regressive Decoding with Constrained Acceptance Speculative Sampling",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Prune-Quantize-Distill: An Ordered Pipeline for Efficient Neural Network Compression",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Architecture Without Architects: How AI Coding Agents Shape Software Architecture",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Evaluation of Embedding-Based and Generative Methods for LLM-Driven Document Classification: Opportunities and Challenges",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Learning Stable Predictors from Weak Supervision under Distribution Shift",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Generalizable Audio-Visual Navigation via Binaural Difference Attention and Action Transition Prediction",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "YMIR: A new Benchmark Dataset and Model for Arabic Yemeni Music Genre Classification Using Convolutional Neural Networks",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Comparative Characterization of KV Cache Management Strategies for LLM Inference",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Scaling Coding Agents via Atomic Skills",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Phase-Associative Memory: Sequence Modeling in Complex Hilbert Space",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PCA-Driven Adaptive Sensor Triage for Edge AI Inference",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "This Treatment Works, Right? Evaluating LLM Sensitivity to Patient Question Framing in Medical QA",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Dynamic Linear Coregionalization for Realistic Synthetic Multivariate Time Series",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "AutoLALA: Automatic Loop Algebraic Locality Analysis for AI and HPC Kernels",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Nidus: Externalized Reasoning for AI-Assisted Engineering",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Beyond LLM-as-a-Judge: Deterministic Metrics for Multilingual Generative Text Evaluation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Edit, But Verify: An Empirical Audit of Instructed Code-Editing Benchmarks",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Vintix II: Decision Pre-Trained Transformer is a Scalable In-Context Reinforcement Learner",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "CRAB: Codebook Rebalancing for Bias Mitigation in Generative Recommendation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "$\\pi^2$: Structure-Originated Reasoning Data Improves Long-Context Reasoning Ability of Large Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Offline RL for Adaptive Policy Retrieval in Prior Authorization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Reasoning Through Chess: How Reasoning Evolves from Data Through Fine-Tuning and Reinforcement Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "EffiPair: Improving the Efficiency of LLM-generated Code with Relative Contrastive Feedback",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Compiled AI: Deterministic Code Generation for LLM-Based Workflow Automation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Planning to Explore: Curiosity-Driven Planning for LLM Test Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "What Makes a Good Response? An Empirical Analysis of Quality in Qualitative Interviews",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Not All Turns Are Equally Hard: Adaptive Thinking Budgets For Efficient Multi-Turn Reasoning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "From Use to Oversight: How Mental Models Influence User Behavior and Output in AI Writing Assistants",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Improving Clinical Trial Recruitment using Clinical Narratives and Large Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "RoboPlayground: Democratizing Robotic Evaluation through Structured Physical Domains",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Curvature-Aware Optimization for High-Accuracy Physics-Informed Neural Networks",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Exemplar Retrieval Without Overhypothesis Induction: Limits of Distributional Sequence Learning in Early Word Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Extending Tabular Denoising Diffusion Probabilistic Models for Time-Series Data Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Spec Kit Agents: Context-Grounded Agentic Workflows",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Broken by Default: A Formal Verification Study of Security Vulnerabilities in AI-Generated Code",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LLMs Should Express Uncertainty Explicitly",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Anchored Cyclic Generation: A Novel Paradigm for Long-Sequence Symbolic Music Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "DQA: Diagnostic Question Answering for IT Support",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "AI and Collective Decisions: Strengthening Legitimacy and Losers' Consent",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Training Without Orthogonalization, Inference With SVD: A Gradient Analysis of Rotation Representations",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ALTO: Adaptive LoRA Tuning and Orchestration for Heterogeneous LoRA Training Workloads",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Bridging Natural Language and Microgrid Dynamics: A Context-Aware Simulator and Dataset",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LanG -- A Governance-Aware Agentic AI Platform for Unified Security Operations",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LLM Evaluation as Tensor Completion: Low Rank Structure and Semiparametric Efficiency",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "On the Role of Fault Localization Context for LLM-Based Program Repair",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Learned Elevation Models as a Lightweight Alternative to LiDAR for Radio Environment Map Estimation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Controllable Singing Style Conversion with Boundary-Aware Information Bottleneck",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Turbulence-like 5/3 spectral scaling in contextual representations of language as a complex system",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Referring-Aware Visuomotor Policy Learning for Closed-Loop Manipulation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "FastDiSS: Few-step Match Many-step Diffusion Language Model on Sequence-to-Sequence Generation--Full Version",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Foundations for Agentic AI Investigations from the Forensic Analysis of OpenClaw",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "AI-Driven Modular Services for Accessible Multilingual Education in Immersive Extended Reality Settings: Integrating Speech Processing, Translation, and Sign Language Rendering",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "INTERACT: An AI-Driven Extended Reality Framework for Accesible Communication Featuring Real-Time Sign Language Interpretation and Emotion Recognition",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Multiscale Physics-Informed Neural Network for Complex Fluid Flows with Long-Range Dependencies",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Rectified Schr\\\"odinger Bridge Matching for Few-Step Visual Navigation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Attention Editing: A Versatile Framework for Cross-Architecture Attention Conversion",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SemLink: A Semantic-Aware Automated Test Oracle for Hyperlink Verification using Siamese Sentence-BERT",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Hackers or Hallucinators? A Comprehensive Analysis of LLM-Based Automated Penetration Testing",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "CAKE: Cloud Architecture Knowledge Evaluation of Large Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "What Models Know, How Well They Know It: Knowledge-Weighted Fine-Tuning for Learning When to Say \"I Don't Know\"",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "BodhiPromptShield: Pre-Inference Prompt Mediation for Suppressing Privacy Propagation in LLM/VLM Agents",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "\"OK Aura, Be Fair With Me\": Demographics-Agnostic Training for Bias Mitigation in Wake-up Word Detection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "EEG-MFTNet: An Enhanced EEGNet Architecture with Multi-Scale Temporal Convolutions and Transformer Fusion for Cross-Session Motor Imagery Decoding",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Evaluating Learner Representations for Differentiation Prior to Instructional Outcomes",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Swiss-Bench 003: Evaluating LLM Reliability and Adversarial Security for Swiss Regulatory Contexts",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ReLU Networks for Exact Generation of Similar Graphs",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Polynomial-Time Algorithm for Thiele Voting Rules with Voter Interval Preferences",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Does Pass Rate Tell the Whole Story? Evaluating Design Constraint Compliance in LLM-based Issue Resolution",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "A Formal Security Framework for MCP-Based AI Agents: Threat Taxonomy, Verification Models, and Defense Mechanisms",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Governance and Regulation of Artificial Intelligence in Developing Countries: A Case Study of Nigeria",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "CritBench: A Framework for Evaluating Cybersecurity Capabilities of Large Language Models in IEC 61850 Digital Substation Environments",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "A Multi-Stage Validation Framework for Trustworthy Large-scale Clinical Information Extraction using Large Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Stories of Your Life as Others: A Round-Trip Evaluation of LLM-Generated Life Stories Conditioned on Rich Psychometric Profiles",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LAG-XAI: A Lie-Inspired Affine Geometric Framework for Interpretable Paraphrasing in Transformer Latent Spaces",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LLM4CodeRE: Generative AI for Code Decompilation Analysis and Reverse Engineering",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Shot-Based Quantum Encoding: A Data-Loading Paradigm for Quantum Neural Networks",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Generating Synthetic Doctor-Patient Conversations for Long-form Audio Summarization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Who Governs the Machine? A Machine Identity Governance Taxonomy (MIGT) for AI Systems Operating Across Enterprise and Geopolitical Boundaries",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "In-Place Test-Time Training",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Controllable Image Generation with Composed Parallel Token Prediction",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Solving a Stackelberg Game on Transportation Networks in a Dynamic Crime Scenario: A Mixed Approach on Multi-Layer Networks",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "The DeepSpeak Dataset",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Why CNN Features Are not Gaussian: A Statistical Anatomy of Deep Representations",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Towards Robust and Realistic Human Pose Estimation via WiFi Signals",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ENTER: Event Based Interpretable Reasoning for VideoQA",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Toward Generalizable Forgery Detection and Reasoning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "UserCentrix: An Agentic Memory-augmented AI Framework for Smart Spaces",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ProBA: Probabilistic Bundle Adjustment with the Bhattacharyya Coefficient",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MAMMA: Markerless & Automatic Multi-Person Motion Action Capture",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Beyond Syntax: Action Semantics Learning for App Agents",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MedGemma Technical Report",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Aleatoric Uncertainty Medical Image Segmentation Estimation via Flow Matching",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Time-reversed Flow Matching with Worst Transport in High-dimensional Latent Space for Image Anomaly Detection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "DSER: Spectral Epipolar Representation for Efficient Light Field Depth Estimation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PaCo-FR: Patch-Pixel Aligned End-to-End Codebook Learning for Facial Representation Pre-training",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Matrix-game 2.0: An open-source real-time and streaming interactive world model",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MedShift: Implicit Conditional Transport for X-Ray Domain Adaptation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Dual-Thresholded Heatmap-Guided Proposal Clustering and Negative Certainty Supervision with Enhanced Base Network for Weakly Supervised Object Detection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Unrolling Graph-based Douglas-Rachford Algorithm for Image Interpolation with Informed Initialization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Multiplayer Nash Preference Optimization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "DeepSearch: Overcome the Bottleneck of Reinforcement Learning with Verifiable Rewards via Monte Carlo Tree Search",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "A Scene is Worth a Thousand Features: Feed-Forward Camera Localization from a Collection of Image Features",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Hypothesis-Driven Feature Manifold Analysis in LLMs via Supervised Multi-Dimensional Scaling",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MATRIX: Mask Track Alignment for Interaction-aware Video Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "DRIFT: Decompose, Retrieve, Illustrate, then Formalize Theorems",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Diff4Splat: Controllable 4D Scene Generation with Latent Dynamic Reconstruction Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Learning to Look Closer: A New Instance-Wise Loss for Small Cerebral Lesion Segmentation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MetroGS: Efficient and Stable Reconstruction of Geometrically Accurate High-Fidelity Large-Scale Scenes",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Toward Virtuous Reinforcement Learning: A Critique and Roadmap",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Tokenizing Buildings: A Transformer for Layout Synthesis",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Robust AI Security and Alignment: A Sisyphean Endeavor?",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Forgery-aware Layer Masking and Multi-Artifact Subspace Decomposition for Generalizable Deepfake Detection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MotionAdapter: Video Motion Transfer via Content-Aware Attention Customization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "IBISAgent: Reinforcing Pixel-Level Visual Reasoning in MLLMs for Universal Biomedical Object Referring and Segmentation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "I2E: From Image Pixels to Actionable Interactive Environments for Text-Guided Image Editing",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "RenderFlow: Single-Step Neural Rendering via Flow Matching",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ReaMIL: Reasoning- and Evidence-Aware Multiple Instance Learning for Whole-Slide Histopathology",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Thinking Like Van Gogh: Structure-Aware Style Transfer via Flow-Guided 3D Gaussian Splatting",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "FeedbackSTS-Det: Sparse Frames-Based Spatio-Temporal Semantic Feedback Network for Moving Infrared Small Target Detection",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Why Can't I Open My Drawer? Mitigating Object-Driven Shortcuts in Zero-Shot Compositional Action Recognition",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PPISP: Physically-Plausible Compensation and Control of Photometric Variations in Radiance Field Reconstruction",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Cross-Domain Few-Shot Learning for Hyperspectral Image Classification Based on Mixup Foundation Model",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "OmniFysics: Towards Physical Intelligence Evolution via Omni-Modal Signal Processing and Network Optimization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Emergent Introspection in AI is Content-Agnostic",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "UCAN: Unified Convolutional Attention Network for Expansive Receptive Fields in Lightweight Super-Resolution",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "InSpatio-WorldFM: An Open-Source Real-Time Generative Frame Model",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Diffusion-Based Feature Denoising and Using NNMF for Robust Brain Tumor Classification",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Gesture-Aware Pretraining and Token Fusion for 3D Hand Pose Estimation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PhySe-RPO: Physics and Semantics Guided Relative Policy Optimization for Diffusion-Based Surgical Smoke Removal",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MoCHA: Denoising Caption Supervision for Motion-Text Retrieval",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "DiffAttn: Diffusion-Based Drivers' Visual Attention Prediction with LLM-Enhanced Semantic Reasoning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "TrajectoryMover: Generative Movement of Object Trajectories in Videos",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "A global dataset of continuous urban dashcam driving",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ThinkTwice: Jointly Optimizing Large Language Models for Reasoning and Self-Refinement",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Automatic Image-Level Morphological Trait Annotation for Organismal Images",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Large-scale Codec Avatars: The Unreasonable Effectiveness of Large-scale Avatar Pretraining",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Xpertbench: Expert Level Tasks with Rubrics-Based Evaluation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "FactReview: Evidence-Grounded Reviews with Literature Positioning and Execution-Based Claim Verification",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Graphic-Design-Bench: A Comprehensive Benchmark for Evaluating AI on Graphic Design Tasks",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Soft Tournament Equilibrium",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "AI Assistance Reduces Persistence and Hurts Independent Performance",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Think in Strokes, Not Pixels: Process-Driven Image Generation via Interleaved Reasoning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Attentive Dilated Convolution for Automatic Sleep Staging using Force-directed Layout",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "TransAgent: Enhancing LLM-Based Code Translation via Fine-Grained Execution Alignment",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Cobblestone: A Divide-and-Conquer Approach for Automating Formal Verification",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "From Cool Demos to Production-Ready FMware: Core Challenges and a Technology Roadmap",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Retrieval Augmented Time Series Forecasting",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "VarDrop: Enhancing Training Efficiency by Reducing Variate Redundancy in Periodic Time Series Forecasting",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "An Innovative Next Activity Prediction Using Process Entropy and Dynamic Attribute-Wise-Transformer in Predictive Business Process Monitoring",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LongSpec: Long-Context Lossless Speculative Decoding with Efficient Drafting and Verification",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Hedging and Non-Affirmation: Quantifying LLM Alignment on Questions of Human Rights",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Image-Based Metrics in Ultrasound for Estimation of Global Speed-of-Sound",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "NativQA Framework: Enabling LLMs and VLMs with Native, Local, and Everyday Knowledge",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "From Concept to Practice: an Automated LLM-aided UVM Machine for RTL Verification",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "The Polar Express: Optimal Matrix Sign Methods and Their Application to the Muon Algorithm",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "BulletGen: Improving 4D Reconstruction with Bullet-Time Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "A Survey of Continual Reinforcement Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Enhancing Hallucination Detection via Future Context",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ShadowNPU: System and Algorithm Co-design for NPU-Centric On-Device LLM Inference",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Ultrasound-based detection and malignancy prediction of breast lesions eligible for biopsy: A multi-center clinical-scenario study using nomograms, large language models, and radiologist evaluation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Pursuit of biomarkers of brain diseases: Beyond cohort comparisons",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "LifeAlign: Lifelong Alignment for Large Language Models with Memory-Augmented Focalized Preference Optimization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "A State-Update Prompting Strategy for Efficient and Robust Multi-turn Dialogue",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Chiplet-Based RISC-V SoC with Modular AI Acceleration",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "StateX: Enhancing RNN Recall via Post-training State Expansion",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Dissecting Transformers: A CLEAR Perspective towards Green AI",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "SatFusion: A Unified Framework for Enhancing Remote Sensing Images via Multi-Frame and Multi-Source Images Fusion",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Unlocking the Potential of Diffusion Language Models through Template Infilling",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "RLAIF-SPA: Structured AI Feedback for Semantic-Prosodic Alignment in Speech Synthesis",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Fairness Evaluation and Inference Level Mitigation in LLMs",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Eigen-Value: Efficient Domain-Robust Data Valuation via Eigenvalue-Based Approach",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Cortex AISQL: A Production SQL Engine for Unstructured Data",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Developing and Evaluating a Large Language Model-Based Automated Feedback System Grounded in Evidence-Centered Design for Supporting Physics Problem Solving",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Image Diffusion Preview with Consistency Solver",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "In search of truth: Evaluating concordance of AI-based anatomy segmentation models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Interpretable Deep Learning for Stock Returns: A Consensus-Bottleneck Asset Pricing Model",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Automatic Replication of LLM Mistakes in Medical Conversations",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "PhyAVBench: A Challenging Audio Physics-Sensitivity Benchmark for Physically Grounded Text-to-Audio-Video Generation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Mechanistic Knobs in LLMs: Retrieving and Steering High-Order Semantic Features via Sparse Autoencoders",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Illusions of Confidence? Diagnosing LLM Truthfulness via Neighborhood Consistency",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Can We Predict Before Executing Machine Learning Agents?",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Frame of Reference: Addressing the Challenges of Common Ground Representation in Situational Dialogs",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "WISP: Waste- and Interference-Suppressed Distributed Speculative LLM Serving at the Edge via Dynamic Drafting and SLO-Aware Batching",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "QUASAR: A Universal Autonomous System for Atomistic Simulation and a Benchmark of Its Capabilities",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Do Schwartz Higher-Order Values Help Sentence-Level Human Value Detection? A Study of Hierarchical Gating and Calibration",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Incident-Guided Spatiotemporal Traffic Forecasting",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Graph-Theoretic Analysis of Phase Optimization Complexity in Variational Wave Functions for Heisenberg Antiferromagnets",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Implementing Grassroots Logic Programs with Multiagent Transition Systems and AI",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Weight space Detection of Backdoors in LoRA Adapters",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Agora: Teaching the Skill of Consensus-Finding with AI Personas Grounded in Human Voice",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Prediction of Grade, Gender, and Academic Performance of Children and Teenagers from Handwriting Using the Sigma-Lognormal Model",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Not All Latent Spaces Are Flat: Hyperbolic Concept Control",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Frequency Matters: Fast Model-Agnostic Data Curation for Pruning and Quantization",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Moral Mazes in the Era of LLMs",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "First-Mover Bias in Gradient Boosting Explanations: Mechanism, Detection, and Resolution",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "The illusion of reasoning: step-level evaluation reveals decorative chain-of-thought in frontier language models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Fast-dVLA: Accelerating Discrete Diffusion VLA to Real-Time Performance",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "ReMemNav: A Rethinking and Memory-Augmented Framework for Zero-Shot Object Navigation",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Beyond Corner Patches: Semantics-Aware Backdoor Attack in Federated Learning",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "STRADAViT: Towards a Foundational Model for Radio Astronomy through Self-Supervised Transfer",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "UnWeaving the knots of GraphRAG -- turns out VectorRAG is almost enough",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Poison Once, Exploit Forever: Environment-Injected Memory Poisoning Attacks on Web Agents",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Geometric Limits of Knowledge Distillation: A Minimum-Width Theorem via Superposition Theory",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "How Alignment Routes: Localizing, Scaling, and Controlling Policy Circuits in Language Models",
+      "source": "arxiv",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "TheCraigHewitt /seomachine",
+      "source": "github_trending",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "NVIDIA /personaplex",
+      "source": "github_trending",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "elebumm /RedditVideoMakerBot",
+      "source": "github_trending",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "atilaahmettaner /tradingview-mcp",
+      "source": "github_trending",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "microsoft /BitNet",
+      "source": "github_trending",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Git commands I run before reading any code",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Veracrypt project update",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "unslothai /unsloth",
+      "source": "github_trending",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "I ported Mac OS X to the Nintendo Wii",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "\u0160koda DuoBell: A bicycle bell that penetrates noise-cancelling headphones",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "mem0ai /mem0",
+      "source": "github_trending",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "virattt /ai-hedge-fund",
+      "source": "github_trending",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Revision Demoparty 2026: Razor1911 [video]",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Microsoft Abruptly Terminates VeraCrypt Account, Halting Windows Updates",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "They're made out of meat (1991)",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "The future of everything is lies, I guess",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "MegaTrain: Full Precision Training of 100B+ Parameter LLMs on a Single GPU",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "newton-physics /newton",
+      "source": "github_trending",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Audio Reactive LED Strips Are Diabolically Hard",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Your File System Is Already A Graph Database",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Muse Spark: Scaling towards personal superintelligence",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "We moved Railway's frontend off Next.js. Builds went from 10+ mins to under 2",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Union types in C# 15",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Ask HN: Any interesting niche hobbies?",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Show HN: I pipe free sports streams into Jellyfin \u2013 no ads, just HLS",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "One item purchased, ten emails",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Claude Managed Agents",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Understanding the Kalman filter with a simple radar example",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Teardown of unreleased LG Rollable shows why rollable phones aren't a thing",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Show HN: Go-Bt: Minimalist Behavior Trees for Go",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Show HN: Explore the Silk Roads through an interactive map",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Virtual Mars Traverse: Every inch of Curiosity rover's path since 2012 landing",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "I've been waiting over a month for Anthropic support to respond",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Show HN: Orange Juice \u2013 Small UX improvements that make HN easier to read",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Show HN: I built a navigation app that displays weather along the route",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Show HN: TUI-use: Let AI agents control interactive terminal programs",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Understanding Traceroute",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    },
+    {
+      "title": "Science confirms torpedo [baseball] bat works as well as regular bat",
+      "source": "hacker_news",
+      "reason": "outside_top_agent_input_limit"
+    }
+  ],
+  "uncertainties": [
+    {
+      "signal_a": "Personalized & Adaptive AI Agents Gain Traction",
+      "signal_b": "US cities are axing Flock Safety surveillance technology",
+      "description": "While analyst signals highlight a strong trend in AI agents gaining traction and integrating into practical applications, the real-world decision by US cities to 'ax Flock Safety surveillance technology' presents a notable counter-narrative. This indicates that despite technical advancements and potential benefits, the widespread societal adoption and 'traction' of AI systems are not unfettered, facing significant friction due to concerns over privacy, trust, and ethical deployment, potentially leading to de-adoption rather than continuous integration."
+    },
+    {
+      "signal_a": "Multimodal AI Focus Shifts to Efficiency, Interpretability, and Action-Oriented Integration",
+      "signal_b": "New Vectors Emerge for Bypassing LLM Safety Mechanisms",
+      "description": "Signal 3 emphasizes a critical shift towards 'interpretability' as a core aspect of making multimodal AI practical and deployable. However, Signal 4, directly supported by papers highlighting 'tokenizer-rooted safety gaps' and broader challenges like 'Robust AI Security and Alignment: A Sisyphean Endeavor?', underscores the persistent and complex nature of vulnerabilities. This creates a tension: while there's an active 'focus' on interpretability, the continuous emergence of deep, difficult-to-detect vulnerabilities suggests that achieving truly robust, transparent, and interpretable multimodal AI, especially for action-oriented deployment, remains an exceptionally difficult and perhaps far-off goal, challenging the notion of a maturing and smoothly integrated interpretability capability."
+    }
+  ],
+  "trace": [],
+  "baseline_comparison": {
+    "summary": "",
+    "decision_clarity_score": null,
+    "token_efficiency": null,
+    "contradiction_detection_rate": null
+  },
+  "token_usage": {
+    "analyst_tokens": 0,
+    "critic_tokens": 0,
+    "query_tokens": 0,
+    "total_tokens": 0
+  }
+}
