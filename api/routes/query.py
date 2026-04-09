@@ -23,6 +23,17 @@ class QueryResponse(BaseModel):
     answer: str
 
 
+class ChatMessageResponse(BaseModel):
+    role: str
+    content: str
+
+
+class ChatSessionResponse(BaseModel):
+    run_id: str
+    session_id: str | None = None
+    messages: list[ChatMessageResponse]
+
+
 @router.post("")
 async def query_run(
     request: QueryRequest,
@@ -74,4 +85,28 @@ async def query_run(
         run_id=request.run_id,
         session_id=session.id,
         answer=answer,
+    )
+
+
+@router.get("/{run_id}")
+async def get_run_chat_history(
+    run_id: str,
+    db: Session = Depends(get_db_session),
+) -> ChatSessionResponse:
+    repository = RunRepository(db)
+    run = repository.get_run(run_id)
+    if run is None:
+        raise HTTPException(status_code=404, detail="Run not found")
+
+    session = repository.get_latest_chat_session_for_run(run_id)
+    if session is None:
+        return ChatSessionResponse(run_id=run_id, session_id=None, messages=[])
+
+    return ChatSessionResponse(
+        run_id=run_id,
+        session_id=session.id,
+        messages=[
+            ChatMessageResponse(role=message.role, content=message.content)
+            for message in session.messages
+        ],
     )
