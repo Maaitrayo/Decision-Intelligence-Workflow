@@ -2,33 +2,6 @@
 
 Signal vs Noise is a decision-intelligence system that ingests a small set of external AI and tech signals, separates meaningful developments from noise, surfaces uncertainty instead of forcing false certainty, and supports saved follow-up Q&A over prior runs.
 
-## Current Status
-
-Implemented today:
-
-- Multi-source ingestion from Hacker News, ArXiv RSS, and GitHub Trending
-- Deterministic scoring, bucketing, deduplication, and ignored-signal handling
-- Gemini-backed Analyst and Critic agents
-- Structured synthesis into a saved `RunResult`
-- Run persistence, reopen flow, and stored follow-up chat sessions
-- Baseline single-call summariser plus first-pass evaluation metrics
-- Live pipeline progress endpoint for UI polling
-- Plain HTML/CSS/JS frontend served by FastAPI with:
-  - run trigger
-  - structured result display
-  - run history sidebar
-  - reopen flow
-  - persisted follow-up chat
-
-Still pending for full assignment completion:
-
-- Vercel deployment
-- Fallback hardening for ingestion failures
-- Automated tests across ingestion, scoring, synthesis, query, and end-to-end flows
-- Persistence validation across restarts
-- Final README sample-run section polish
-- Walkthrough video
-
 ## Architecture Overview
 
 The system is organized into a staged workflow:
@@ -240,6 +213,7 @@ Useful scripts:
 
 ```powershell
 python scripts\run_pipeline.py
+python scripts\run_evaluation.py
 python scripts\test_query_flow.py
 python scripts\test_hn_ingestor.py
 python scripts\test_arxiv_ingestor.py
@@ -261,15 +235,7 @@ Implemented:
 - saved follow-up Q&A
 - baseline comparison against a simpler system
 - first-pass evaluation metrics
-
-Still outstanding:
-
-- deployment on Vercel
-- fallback hardening
-- automated test coverage
-- persistence validation across restarts
-- sample runs section with logs and traces
-- final submission polish
+- deployment on Renderer
 - walkthrough video
 
 ## Sample Runs and Walkthrough Assets
@@ -277,7 +243,18 @@ Still outstanding:
 Current repo artifacts already available:
 
 - `assets/result1.json`
-- UI screenshots under `assets/images/` if present in your local workspace
+- `assets/evaluation_20260409_161057.json`
+- `assets/evaluation_20260409_164010.json`
+
+Evaluation artifacts:
+
+- `assets/evaluation_20260409_161057.json`
+  - saved output from an `eval_mode=True` run
+  - includes the normal `RunResult` plus `baseline_comparison`
+- `assets/evaluation_20260409_164010.json`
+  - second saved evaluation run for comparison/evidence
+  - can be used directly in the submission’s evaluation section
+
 
 ### Sample Run 1
 
@@ -353,3 +330,75 @@ Follow-up Q&A sample:
   - the deployment paradox between efficiency and reasoning depth
   - alignment gaps in multimodal systems
   - the risk of surface compliance in personalized educational agents
+
+## UI States / System Walkthrough
+
+This section highlights the key UI states of the system across a full interaction lifecycle — from loading a saved session to deep inspection and follow-up querying.
+
+All images are located in: `assets/images/`
+
+---
+
+### 1. Session Loaded State
+
+When a previous run is opened, the system restores:
+- Executive summary
+- Key signals
+- Stored context
+- Previous session continuity
+
+This demonstrates persistence and the ability to resume analysis without recomputation.
+
+![Session Loaded](assets/images/session_loaded.png)
+
+---
+
+### 2. Analysis Triggered State
+
+When the user clicks **"Run Analysis"**, the pipeline begins execution.
+
+The UI reflects:
+- Active processing state
+- Stage-wise progress (ingestion → scoring → agents → synthesis)
+- System responsiveness during async execution
+
+![Critic Agent Analysis Running](assets\images\running_state_critic.png)
+
+---
+
+### 3. Trace & Ignored Signals View
+
+This section exposes **how the system made decisions**, not just the final output.
+
+Includes:
+- Trace panel (stage-by-stage reasoning and decisions)
+- Ignored signals with explicit discard reasons
+- Transparency into filtering and scoring
+
+This is critical for auditability and trust.
+
+![Trace and Ignored Signals](assets\images\trace_panel.png)
+
+---
+
+### 4. Follow-up Q&A Interface
+
+Users can interact with the system after a run using grounded context.
+
+Features:
+- Chat interface tied to a specific run
+- Persistent conversation history
+- Answers generated using stored signals (no re-run)
+
+![Follow-up Chat](assets\images\followup_qa.png)
+
+---
+
+## Interaction Flow Summary
+
+| Step | User Action | System Behavior |
+|------|------------|----------------|
+| 1 | Open session | Loads stored run with full context |
+| 2 | Run analysis | Executes full pipeline with progress tracking |
+| 3 | Inspect results | View trace logs and filtered (ignored) signals |
+| 4 | Ask questions | Query system with persistent context |
