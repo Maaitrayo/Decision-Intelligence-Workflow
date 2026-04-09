@@ -120,6 +120,15 @@ class RunRepository:
             .one_or_none()
         )
 
+    def get_latest_chat_session_for_run(self, run_id: str) -> ChatSessionRecord | None:
+        return (
+            self.db.query(ChatSessionRecord)
+            .options(selectinload(ChatSessionRecord.messages))
+            .filter(ChatSessionRecord.run_id == run_id)
+            .order_by(ChatSessionRecord.created_at.desc())
+            .one_or_none()
+        )
+
     def add_chat_message(self, session_id: str, role: str, content: str) -> ChatMessageRecord:
         message = ChatMessageRecord(session_id=session_id, role=role, content=content)
         self.db.add(message)
