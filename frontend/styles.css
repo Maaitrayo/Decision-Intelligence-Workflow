@@ -47,14 +47,13 @@ body::before {
 }
 
 .app-shell {
-  width: min(1420px, calc(100% - 32px));
+  width: min(1560px, calc(100% - 24px));
   min-height: 100vh;
   margin: 0 auto;
-  padding: 22px 0;
+  padding: 18px 0;
   display: grid;
-  grid-template-columns: 360px minmax(0, 1fr);
-  gap: 18px;
-  transition: grid-template-columns 180ms ease;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 14px;
 }
 
 .sidebar,
@@ -67,39 +66,14 @@ body::before {
 }
 
 .sidebar {
-  padding: 22px;
+  padding: 18px;
   display: grid;
   grid-template-rows: auto auto 1fr;
-  gap: 18px;
+  gap: 14px;
   position: sticky;
-  top: 22px;
-  height: calc(100vh - 44px);
-  overflow: hidden;
-  transition: width 180ms ease, padding 180ms ease, border-radius 180ms ease;
-}
-
-.sidebar.is-collapsed {
-  grid-template-rows: auto 1fr;
-  width: 96px;
-  padding: 16px 12px;
-  justify-items: center;
-}
-
-.sidebar.is-collapsed .sidebar-copy,
-.sidebar.is-collapsed .sidebar-section {
-  display: none;
-}
-
-.sidebar.is-collapsed .sidebar-header {
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.sidebar.is-collapsed .eyebrow {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  letter-spacing: 0.14em;
+  top: 18px;
+  height: calc(100vh - 36px);
+  overflow: auto;
 }
 
 .sidebar-header,
@@ -235,6 +209,7 @@ button:disabled {
   font-size: 0.95rem;
   line-height: 1.35;
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .run-card p {
@@ -252,18 +227,18 @@ button:disabled {
 .workspace {
   min-width: 0;
   display: grid;
-  gap: 18px;
+  gap: 14px;
 }
 
 .panel {
-  padding: 22px;
+  padding: 18px;
 }
 
 .panel-hero {
-  min-height: 160px;
+  min-height: 132px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 16px;
+  gap: 12px;
   align-items: start;
 }
 
@@ -289,20 +264,20 @@ button:disabled {
 .workspace-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 14px;
 }
 
 .workspace-grid-primary {
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
   align-items: start;
 }
 
 .workspace-grid-secondary {
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: minmax(0, 1.35fr) minmax(340px, 0.85fr);
 }
 
 .feature-panel {
-  min-height: 220px;
+  min-height: 180px;
 }
 
 .feature-panel-summary {
@@ -311,9 +286,9 @@ button:disabled {
 
 .summary-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
-  gap: 18px;
-  margin-top: 16px;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.75fr);
+  gap: 14px;
+  margin-top: 12px;
   align-items: start;
 }
 
@@ -322,9 +297,9 @@ button:disabled {
 }
 
 .summary-copy {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  padding-right: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-right: 0;
 }
 
 .summary-metrics {
@@ -362,8 +337,8 @@ button:disabled {
 .stack-list,
 .chat-thread {
   display: grid;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 10px;
+  margin-top: 12px;
 }
 
 .item-card,
@@ -372,19 +347,21 @@ button:disabled {
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: rgba(255, 252, 247, 0.84);
-  padding: 14px 15px;
+  padding: 12px 14px;
 }
 
 .item-card h3,
 .trace-card h3 {
-  font-size: 1rem;
+  font-size: 0.98rem;
   margin-bottom: 8px;
+  overflow-wrap: anywhere;
 }
 
 .item-card p,
 .trace-card p,
 .chat-bubble p {
   line-height: 1.58;
+  overflow-wrap: anywhere;
 }
 
 .item-meta,
@@ -407,8 +384,8 @@ button:disabled {
 
 .trace-metrics {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .trace-metric {

@@ -1,6 +1,4 @@
 const runButton = document.getElementById("run-button");
-const sidebar = document.getElementById("sidebar");
-const sidebarToggle = document.getElementById("sidebar-toggle");
 const sessionCount = document.getElementById("session-count");
 const runHistory = document.getElementById("run-history");
 const workspaceTitle = document.getElementById("workspace-title");
@@ -109,6 +107,11 @@ function renderRunHistory(runs, preferredRunId) {
 
   if (preferredRunId) {
     void loadRun(preferredRunId);
+    return;
+  }
+
+  if (!selectedRun && runList[0]?.run_id) {
+    void loadRun(runList[0].run_id);
   }
 }
 
@@ -127,8 +130,8 @@ async function loadRun(runId) {
     }
 
     const payload = await response.json();
-    currentSessionId = null;
     renderRun(payload);
+    await loadChatHistory(runId);
     setStatus("Session Loaded");
     await loadRunHistory();
   } catch (error) {
@@ -156,6 +159,22 @@ async function pollProgress() {
   }
 }
 
+async function loadChatHistory(runId) {
+  try {
+    const response = await fetch(`${QUERY_ENDPOINT}/${encodeURIComponent(runId)}`);
+    if (!response.ok) {
+      throw new Error(`Could not load chat history (${response.status})`);
+    }
+
+    const payload = await response.json();
+    currentSessionId = payload.session_id || null;
+    renderChat(payload.messages || []);
+  } catch (_error) {
+    currentSessionId = null;
+    renderChat([]);
+  }
+}
+
 function renderRun(run) {
   selectedRun = run;
   const signalCount = run.key_signals?.length || 0;
@@ -179,7 +198,6 @@ function renderRun(run) {
   renderUncertainties(run.uncertainties || []);
   renderIgnored(run.ignored_signals || []);
   renderTrace(run.trace || []);
-  renderChat([]);
 }
 
 function renderSignals(signals) {
@@ -403,12 +421,6 @@ function toggleSummaryMetrics(signalCount, uncertaintyCount, traceCount, totalTo
   summaryMetrics.hidden = !hasMetrics;
   summaryLayout.classList.toggle("summary-layout-compact", !hasMetrics);
 }
-
-sidebarToggle.addEventListener("click", () => {
-  const collapsed = sidebar.classList.toggle("is-collapsed");
-  sidebarToggle.textContent = collapsed ? "Show Sessions" : "Hide Sessions";
-  sidebarToggle.setAttribute("aria-expanded", String(!collapsed));
-});
 
 runButton.addEventListener("click", () => {
   void runAnalysis();
