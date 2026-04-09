@@ -29,8 +29,11 @@ let currentSessionId = null;
 let progressTimer = null;
 
 async function runAnalysis() {
+  selectedRun = null;
+  currentSessionId = null;
   setStatus("Running");
   setWorkspace("Running fresh analysis", "The pipeline is collecting sources and producing a new result.");
+  resetWorkspaceForNewRun();
   runButton.disabled = true;
   startProgressPolling();
 
@@ -383,6 +386,7 @@ function renderErrorState(message) {
   uncertaintiesOutput.innerHTML = '<p class="empty-state">No uncertainties surfaced yet.</p>';
   ignoredOutput.innerHTML = '<p class="empty-state">No ignored items yet.</p>';
   traceOutput.innerHTML = '<p class="empty-state">No trace entries yet.</p>';
+  chatOutput.innerHTML = '<p class="empty-state">Open a run to start a grounded follow-up chat.</p>';
 }
 
 function shortId(value) {
@@ -420,6 +424,20 @@ function toggleSummaryMetrics(signalCount, uncertaintyCount, traceCount, totalTo
   const hasMetrics = signalCount > 0 || uncertaintyCount > 0 || traceCount > 0 || totalTokens > 0;
   summaryMetrics.hidden = !hasMetrics;
   summaryLayout.classList.toggle("summary-layout-compact", !hasMetrics);
+}
+
+function resetWorkspaceForNewRun() {
+  summaryOutput.textContent = "Preparing a fresh analysis run...";
+  metricSignals.textContent = "0";
+  metricUncertainties.textContent = "0";
+  metricTrace.textContent = "0";
+  metricTokens.textContent = "0";
+  toggleSummaryMetrics(0, 0, 0, 0);
+  signalsOutput.innerHTML = '<p class="empty-state">New run in progress.</p>';
+  uncertaintiesOutput.innerHTML = '<p class="empty-state">Waiting for critic review.</p>';
+  ignoredOutput.innerHTML = '<p class="empty-state">Ignored items will appear after scoring.</p>';
+  traceOutput.innerHTML = '<p class="empty-state">Trace will populate as stages complete.</p>';
+  chatOutput.innerHTML = '<p class="empty-state">Chat is tied to the selected saved run. It will reset for a fresh run.</p>';
 }
 
 runButton.addEventListener("click", () => {
