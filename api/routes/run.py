@@ -12,6 +12,7 @@ router = APIRouter(prefix="/api/runs", tags=["runs"])
 
 class RunRequest(BaseModel):
     eval: bool = False
+    signal_keywords: str | None = None
 
 
 @router.get("")
@@ -32,8 +33,17 @@ async def get_run(run_id: str, db: Session = Depends(get_db_session)) -> dict:
 
 @router.post("")
 async def create_run(request: RunRequest, db: Session = Depends(get_db_session)) -> dict:
+    print(
+        "Run request received | "
+        f"eval={request.eval} | "
+        f"signal_keywords={request.signal_keywords!r}"
+    )
+
     orchestrator = PipelineOrchestrator()
-    result = await orchestrator.run(eval_mode=request.eval)
+    result = await orchestrator.run(
+        eval_mode=request.eval,
+        signal_keywords=request.signal_keywords,
+    )
 
     repository = RunRepository(db)
     repository.save_run(result)

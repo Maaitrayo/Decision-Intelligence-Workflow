@@ -13,18 +13,35 @@ from pipeline.scoring.source_weights import get_source_weight
 class TFIDFScorer:
     def __init__(self) -> None:
         settings = get_settings()
-        self.keywords = [keyword.strip().lower() for keyword in settings.signal_keywords.split(",") if keyword.strip()]
+        self.default_keywords = [
+            keyword.strip().lower()
+            for keyword in settings.signal_keywords.split(",")
+            if keyword.strip()
+        ]
 
-    def score_items(self, items: list[RawItem]) -> list[ScoredItem]:
+    def score_items(
+        self,
+        items: list[RawItem],
+        signal_keywords: str | None = None,
+    ) -> list[ScoredItem]:
         if not items:
             return []
 
+        keywords = self._resolve_keywords(signal_keywords)
+        if not keywords:
+            keywords = self.default_keywords
+
         documents = [self._document_text(item) for item in items]
-        document_frequencies = self._compute_document_frequencies(documents)
+        document_frequencies = self._compute_document_frequencies(documents, keywords)
         scored_items: list[ScoredItem] = []
 
         for item, document in zip(items, documents, strict=True):
-            base_score = self._keyword_tfidf_score(document, document_frequencies, len(documents))
+            base_score = self._keyword_tfidf_score(
+                document,
+                document_frequencies,
+                len(documents),
+                keywords,
+            )
             weighted_score = base_score * get_source_weight(item)
             boosted_score = weighted_score + self._metadata_boost(item)
 
@@ -43,8 +60,9 @@ class TFIDFScorer:
         document: str,
         document_frequencies: dict[str, int],
         total_documents: int,
+        keywords: list[str],
     ) -> float:
-        if not document or not self.keywords:
+        if not document or not keywords:
             return 0.0
 
         terms = self._tokenize(document)
@@ -55,7 +73,7 @@ class TFIDFScorer:
         total_terms = len(terms)
         score = 0.0
 
-        for keyword in self.keywords:
+        for keyword in keywords:
             count = term_counts.get(keyword, 0)
             if count == 0:
                 continue
@@ -66,16 +84,27 @@ class TFIDFScorer:
 
         return score
 
-    def _compute_document_frequencies(self, documents: list[str]) -> dict[str, int]:
-        frequencies = {keyword: 0 for keyword in self.keywords}
+    def _compute_document_frequencies(self, documents: list[str], keywords: list[str]) -> dict[str, int]:
+        frequencies = {keyword: 0 for keyword in keywords}
 
         for document in documents:
             terms = set(self._tokenize(document))
-            for keyword in self.keywords:
+            for keyword in keywords:
                 if keyword in terms:
                     frequencies[keyword] += 1
 
         return frequencies
+
+    @staticmethod
+    def _resolve_keywords(signal_keywords: str | None) -> list[str]:
+        if not signal_keywords:
+            return []
+
+        return [
+            keyword.strip().lower()
+            for keyword in signal_keywords.split(",")
+            if keyword.strip()
+        ]
 
     def _document_text(self, item: RawItem) -> str:
         if item.summary:

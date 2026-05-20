@@ -20,7 +20,11 @@ class PipelineOrchestrator:
         self.synthesiser = Synthesiser()
         self.evaluation_comparer = EvaluationComparer()
 
-    async def run(self, eval_mode: bool = False) -> RunResult:
+    async def run(
+        self,
+        eval_mode: bool = False,
+        signal_keywords: str | None = None,
+    ) -> RunResult:
         trace: list[TraceEntry] = []
 
         progress_tracker.set_state("starting", "Starting pipeline run", True)
@@ -44,7 +48,7 @@ class PipelineOrchestrator:
         scoring_started = perf_counter()
         progress_tracker.set_state("scoring", "Ranking and filtering signals", True)
         self._log("Stage: scoring started")
-        scored_items = self.scoring_service.score(raw_items)
+        scored_items = self.scoring_service.score(raw_items, signal_keywords=signal_keywords)
         self._log(f"Stage: scoring completed | scored_items={len(scored_items)}")
         trace.append(
             self._build_trace_entry(

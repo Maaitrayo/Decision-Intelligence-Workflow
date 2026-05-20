@@ -1,4 +1,5 @@
 const runButton = document.getElementById("run-button");
+const signalKeywordsInput = document.getElementById("signal-keywords");
 const sessionCount = document.getElementById("session-count");
 const runHistory = document.getElementById("run-history");
 const workspaceTitle = document.getElementById("workspace-title");
@@ -41,7 +42,10 @@ async function runAnalysis() {
     const response = await fetch(RUN_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ eval: false }),
+      body: JSON.stringify({
+        eval: false,
+        signal_keywords: signalKeywordsInput ? signalKeywordsInput.value.trim() : "",
+      }),
     });
 
     if (!response.ok) {
